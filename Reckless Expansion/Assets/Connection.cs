@@ -62,7 +62,7 @@ public class Connection : MonoBehaviour
                 {
                     GetComponent<Renderer>().material.color = originalColor;
                 }
-                else if (!potentialLinks.Contains(this.gameObject) && !c.GetComponent<Connection>().locked)
+                if (!potentialLinks.Contains(this.gameObject) && !c.GetComponent<Connection>().locked)
                 {
                     c.GetComponent<Renderer>().material.color = originalColor;
                 }
@@ -85,6 +85,7 @@ public class Connection : MonoBehaviour
 
         if (!interesectFound && pipesConnected)
         {
+            GetComponentInParent<DragTransform>().ResetColor();
             foreach (GameObject p in potentialLinks)
             {
                 p.GetComponent<Connection>().locked = true;

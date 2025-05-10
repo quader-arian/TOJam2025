@@ -29,9 +29,16 @@ class DragTransform : MonoBehaviour
     void OnMouseExit()
     {
         if (!this.enabled) return;
+        ResetColor();
+    }
+    public void ResetColor()
+    {
         foreach (Transform child in transform)
         {
-            child.GetComponent<Renderer>().material.color = originalColor;
+            if (child.tag == "Room")
+            {
+                child.GetComponent<Renderer>().material.color = originalColor;
+            }
         }
     }
 
