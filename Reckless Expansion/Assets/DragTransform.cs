@@ -1,0 +1,71 @@
+using System.Collections;
+using UnityEngine;
+
+class DragTransform : MonoBehaviour
+{
+    public Color mouseOverColor = Color.blue;
+    private Color originalColor;
+    public bool dragging = false;
+    private float distance;
+    private Vector3 startDist;
+
+    private void Start()
+    {
+        originalColor = GetComponentInChildren<Renderer>().material.color;
+    }
+
+    void OnMouseEnter()
+    {
+        if (!this.enabled) return;
+        foreach (Transform child in transform)
+        {
+            if(child.tag == "Room")
+            {
+                child.GetComponent<Renderer>().material.color = mouseOverColor;
+            }
+        }
+    }
+
+    void OnMouseExit()
+    {
+        if (!this.enabled) return;
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<Renderer>().material.color = originalColor;
+        }
+    }
+
+    void OnMouseDown()
+    {
+        if (!this.enabled) return;
+        distance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        dragging = true;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Vector3 rayPoint = ray.GetPoint(distance);
+        startDist = transform.position - rayPoint;
+    }
+
+    void OnMouseUp()
+    {
+        if (!this.enabled) return;
+        dragging = false;
+        foreach (Transform child in transform)
+        {
+            if(child.GetComponent<Connection>() != null)
+            {
+                child.GetComponent<Connection>().LockCheck();
+
+            }
+        }
+    }
+
+    void Update()
+    {
+        if (dragging)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Vector3 rayPoint = ray.GetPoint(distance);
+            transform.position = rayPoint + startDist;
+        }
+    }
+}
