@@ -10,16 +10,19 @@ public class ScoreController : MonoBehaviour
     public float score;
     public float money;
     public float health;
+    public float tokens;
     public int rooms;
     public float timer = 0;
     public TMP_Text tmpt;
     public int lastSeconds = 0;
     public int roomSubtract = 0;
+    public bool adding = false;
 
     // Start is called before the first frame update
     void Start()
     {
         health = 100;
+        tokens = 0;
     }
 
     // Update is called once per frame
@@ -40,6 +43,16 @@ public class ScoreController : MonoBehaviour
             lastSeconds = seconds;
         }
 
-        tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nRooms: " + (rooms-roomSubtract) + "\nHealth: " + health;
+        if (seconds % 10 == 0 && adding)
+        {
+            tokens += 5;
+            adding = false;
+        }
+        if (seconds % 10 == 1)
+        {
+            adding = true;
+        }
+
+        tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nLife support tokens: " + tokens + "\nRooms: " + (rooms-roomSubtract) + "\nHealth: " + health;
     }
 }
