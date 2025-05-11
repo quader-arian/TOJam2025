@@ -1,7 +1,9 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.ObjectChangeEventStream;
 
 public class PlaceSpawner : MonoBehaviour
 {
@@ -11,19 +13,16 @@ public class PlaceSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        var build1 = Instantiate(rooms[Random.Range(0, rooms.Length)], spawners[0].transform.position, spawners[0].transform.rotation);
-        build1.transform.parent = this.transform;
-        var build2 = Instantiate(rooms[Random.Range(0, rooms.Length)], spawners[1].transform.position, spawners[1].transform.rotation);
-        build2.transform.parent = this.transform;  
-        var build3 = Instantiate(rooms[Random.Range(0, rooms.Length)], spawners[2].transform.position, spawners[2].transform.rotation);
-        build3.transform.parent = this.transform;
-
+        GameObject[] builds = new GameObject[3];
+        for(int i = 0; i < builds.Length; i++)
+        {
+            builds[i] = Instantiate(rooms[Random.Range(0, rooms.Length)], spawners[i].transform.position, spawners[i].transform.rotation);
+            builds[i].GetComponent<DragTransform>().enabled = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

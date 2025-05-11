@@ -45,7 +45,7 @@ public class CameraTransform : MonoBehaviour
         int zoom = (int)(Camera.main.orthographicSize - (Input.mouseScrollDelta.y * sensitivity));
         if (zoom >= 1  && zoom <= 30)
         {
-            Camera.main.orthographicSize =zoom;
+            Camera.main.orthographicSize = zoom;
         }
     }
 }

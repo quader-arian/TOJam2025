@@ -14,6 +14,7 @@ public class ScoreController : MonoBehaviour
     public float timer = 0;
     public TMP_Text tmpt;
     public int lastSeconds = 0;
+    public int roomSubtract = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,6 @@ public class ScoreController : MonoBehaviour
             lastSeconds = seconds;
         }
 
-        tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nRooms: " + rooms;
+        tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nRooms: " + (rooms-roomSubtract) + "\nHealth: " + health;
     }
 }
