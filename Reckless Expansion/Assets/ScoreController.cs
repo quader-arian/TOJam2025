@@ -15,7 +15,6 @@ public class ScoreController : MonoBehaviour
     public float timer = 0;
     public TMP_Text tmpt;
     public int lastSeconds = 0;
-    public int roomSubtract = 0;
     public bool adding = false;
 
     // Start is called before the first frame update
@@ -38,8 +37,15 @@ public class ScoreController : MonoBehaviour
         rooms = GameObject.FindGameObjectsWithTag("Place").Length;
         if(seconds != lastSeconds)
         {
-            score += rooms * 10;
-            money += rooms * 5;
+            int scoreGain = 0;
+            int moneyGain = 0;
+            foreach (GameObject p in GameObject.FindGameObjectsWithTag("Place"))
+            {
+                scoreGain += p.GetComponent<RoomStats>().popGain;
+                moneyGain += p.GetComponent<RoomStats>().currencyGain;
+            }
+            score += scoreGain;
+            money += moneyGain;
             lastSeconds = seconds;
         }
 
@@ -53,6 +59,6 @@ public class ScoreController : MonoBehaviour
             adding = true;
         }
 
-        tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nLife Support Tokens: ¥" + tokens + "\nRooms: " + (rooms-roomSubtract) + "\nHealth: " + health;
+        tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nLife Support Tokens: ¥" + tokens + "\nRooms: " + rooms + "\nHealth: " + health;
     }
 }

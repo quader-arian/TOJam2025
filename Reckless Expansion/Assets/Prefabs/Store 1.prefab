@@ -557,7 +557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2689391359663150093}
   - component: {fileID: 4931134804271151971}
-  - component: {fileID: 8490184196248667567}
+  - component: {fileID: 6640181646148200324}
   - component: {fileID: 4691303772012848718}
   - component: {fileID: 8325577368350971745}
   - component: {fileID: 1174409485534497951}
@@ -640,7 +640,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8490184196248667567
+--- !u!114 &6640181646148200324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4127112600597190700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a2bfcc4818fd3e47ad5e811f91224f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 79dbf5594f5a81a4aa51218efc4b48ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
@@ -664,7 +664,7 @@ MonoBehaviour:
   - {fileID: 8115977210374724714}
   - {fileID: 5661565661710030957}
   - {fileID: 7138984533938179175}
-  moneyStats: {fileID: 0}
+  tokenStats: {fileID: 0}
 --- !u!114 &4691303772012848718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,12 +957,12 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 3326512360919288168}
+  m_TargetGraphic: {fileID: 364861476079081844}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8490184196248667567}
-        m_TargetAssemblyTypeName: PlaceSpawner, Assembly-CSharp
+      - m_Target: {fileID: 6640181646148200324}
+        m_TargetAssemblyTypeName: PlaceSpawner1, Assembly-CSharp
         m_MethodName: attemptBuy
         m_Mode: 3
         m_Arguments:
@@ -1442,12 +1442,12 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 4399230561535683387}
+  m_TargetGraphic: {fileID: 364861476079081844}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8490184196248667567}
-        m_TargetAssemblyTypeName: PlaceSpawner, Assembly-CSharp
+      - m_Target: {fileID: 6640181646148200324}
+        m_TargetAssemblyTypeName: PlaceSpawner1, Assembly-CSharp
         m_MethodName: attemptBuy
         m_Mode: 3
         m_Arguments:
@@ -1663,8 +1663,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8490184196248667567}
-        m_TargetAssemblyTypeName: PlaceSpawner, Assembly-CSharp
+      - m_Target: {fileID: 6640181646148200324}
+        m_TargetAssemblyTypeName: PlaceSpawner1, Assembly-CSharp
         m_MethodName: attemptBuy
         m_Mode: 3
         m_Arguments:

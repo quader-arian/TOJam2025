@@ -807,7 +807,7 @@ MonoBehaviour:
   currencyGain: 0
   malfunction: 0
   type: 2
-  additionalInfo: 'nutients '
+  additionalInfo: 'nutrients '
   isWater: 0
   isNutrients: 1
   isOxygen: 0

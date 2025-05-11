@@ -10,7 +10,7 @@ public class PlaceSpawner1 : MonoBehaviour
     public GameObject[] rooms;
     public GameObject[] spawners;
     public GameObject[] buyButtons;
-    public GameObject moneyStats;
+    public GameObject tokenStats;
     GameObject[] builds = new GameObject[3];
     int bought = -1;
 
@@ -26,7 +26,7 @@ public class PlaceSpawner1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float money = moneyStats.GetComponent<ScoreController>().money;
+        float tokens = tokenStats.GetComponent<ScoreController>().tokens;
         if (bought >= 0)
         {
             if (!builds[bought].GetComponent<DragTransform>().enabled)
@@ -41,11 +41,12 @@ public class PlaceSpawner1 : MonoBehaviour
 
     public void attemptBuy(int i)
     {
-        if (builds[i].GetComponent<RoomStats>().cost <= moneyStats.GetComponent<ScoreController>().tokens)
+        if (builds[i].GetComponent<RoomStats>().cost <= tokenStats.GetComponent<ScoreController>().tokens)
         {
             buyButtons[i].GetComponent<Button>().interactable = false;
-            moneyStats.GetComponent<ScoreController>().tokens -= builds[i].GetComponent<RoomStats>().cost;
+            tokenStats.GetComponent<ScoreController>().tokens -= 1;
             builds[i].GetComponent<DragTransform>().enabled = true;
+            builds[i].tag = "Place";
             foreach (Transform child in builds[i].transform)
             {
                 if (child.tag == "Up" || child.tag == "Down" || child.tag == "Left" || child.tag == "Right")
@@ -62,6 +63,7 @@ public class PlaceSpawner1 : MonoBehaviour
     {
         builds[i] = Instantiate(rooms[i], spawners[i].transform.position, spawners[i].transform.rotation);
         builds[i].transform.parent = this.gameObject.transform;
+        builds[i].tag = null;
         builds[i].GetComponent<DragTransform>().enabled = false;
         foreach (Transform child in builds[i].transform)
         {

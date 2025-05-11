@@ -45,6 +45,7 @@ public class PlaceSpawner : MonoBehaviour
             buyButtons[i].GetComponent<Button>().interactable = false;
             moneyStats.GetComponent<ScoreController>().money -= builds[i].GetComponent<RoomStats>().cost;
             builds[i].GetComponent<DragTransform>().enabled = true;
+            builds[i].tag = "Place";
             foreach (Transform child in builds[i].transform)
             {
                 if (child.tag == "Up" || child.tag == "Down" || child.tag == "Left" || child.tag == "Right")
@@ -61,6 +62,7 @@ public class PlaceSpawner : MonoBehaviour
     {
         builds[i] = Instantiate(rooms[Random.Range(0, rooms.Length)], spawners[i].transform.position, spawners[i].transform.rotation);
         builds[i].transform.parent = this.gameObject.transform;
+        builds[i].tag = null;
         builds[i].GetComponent<DragTransform>().enabled = false;
         foreach (Transform child in builds[i].transform)
         {
