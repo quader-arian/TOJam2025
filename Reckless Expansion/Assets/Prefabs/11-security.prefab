@@ -919,7 +919,7 @@ MonoBehaviour:
   cost: 950
   popGain: 10
   currencyGain: 0
-  malfunction: 0
+  malfunction: 75
   type: 0
   additionalInfo: 
   isWater: 0

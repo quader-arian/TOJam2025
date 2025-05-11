@@ -1027,7 +1027,7 @@ MonoBehaviour:
   cost: 1100
   popGain: 15
   currencyGain: 0
-  malfunction: 0
+  malfunction: 75
   type: 0
   additionalInfo: ' '
   isWater: 0

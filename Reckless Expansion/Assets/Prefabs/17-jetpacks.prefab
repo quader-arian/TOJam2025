@@ -917,7 +917,7 @@ MonoBehaviour:
   cost: 375
   popGain: 0
   currencyGain: 15
-  malfunction: 0
+  malfunction: 75
   type: 0
   additionalInfo: oxygen
   isWater: 0
