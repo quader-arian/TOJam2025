@@ -9,10 +9,4 @@ public class Movecontrol : MonoBehaviour
     {
         mousedOver = true;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
