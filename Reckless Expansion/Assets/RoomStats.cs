@@ -14,6 +14,7 @@ public class RoomStats : MonoBehaviour
     public bool isWater = false;
     public bool isNutrients = false;
     public bool isOxygen = false;
+    public string name = "";
 
     // Update is called once per frame
     void Update()
