@@ -916,7 +916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 375
   popGain: 0
-  currencyGain: 35
+  currencyGain: 15
   malfunction: 0
   type: 0
   additionalInfo: oxygen

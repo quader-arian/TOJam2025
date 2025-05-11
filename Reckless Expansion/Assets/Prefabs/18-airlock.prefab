@@ -918,7 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 950
   popGain: 0
-  currencyGain: 95
+  currencyGain: 45
   malfunction: 0
   type: 0
   additionalInfo: ' '
