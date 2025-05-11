@@ -783,8 +783,9 @@ GameObject:
   - component: {fileID: 7115645270729472485}
   - component: {fileID: 6851261778742936718}
   - component: {fileID: 8673824024908495497}
+  - component: {fileID: 4150308255248576190}
   m_Layer: 0
-  m_Name: 14
+  m_Name: 14-cinema
   m_TagString: Place
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -903,6 +904,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ecb66a9085b1d4d9ab67eed2a6c6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4150308255248576190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7bb4e07bcd4b14ab76da9f82ee1dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 400
+  popGain: 0
+  currencyGain: 125
+  malfunction: 0
+  type: -1
+  additionalInfo: limited
 --- !u!1 &4754132707825130429
 GameObject:
   m_ObjectHideFlags: 0
