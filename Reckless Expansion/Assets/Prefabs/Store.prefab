@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7241553093457781521}
   - component: {fileID: 3567415372296371229}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2712757771634588384}
   - component: {fileID: 3912517099621625304}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,8 +179,9 @@ GameObject:
   - component: {fileID: 2689391359663150093}
   - component: {fileID: 4931134804271151971}
   - component: {fileID: 8490184196248667567}
+  - component: {fileID: 4691303772012848718}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Store
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,6 +294,18 @@ MonoBehaviour:
   - {fileID: 3968026130929577669}
   - {fileID: 1444841490441933173}
   - {fileID: 5966541337154289368}
+--- !u!114 &4691303772012848718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127112600597190700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e72e2af52bad2943974f7cecb1abefa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5966541337154289368
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +317,7 @@ GameObject:
   - component: {fileID: 5434547225412481100}
   - component: {fileID: 5508623622722456983}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

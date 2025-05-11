@@ -73,6 +73,8 @@ class DragTransform : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 rayPoint = ray.GetPoint(distance);
             transform.position = rayPoint + startDist;
+            var curr = transform.position;
+            transform.position = new Vector3(Mathf.Round(curr.x), Mathf.Round(curr.y), Mathf.Round(curr.z));
         }
     }
 }

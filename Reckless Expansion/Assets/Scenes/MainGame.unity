@@ -707,15 +707,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689391359663150093, guid: 24914cad8871ccd4e867ca102af8ffa3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2689391359663150093, guid: 24914cad8871ccd4e867ca102af8ffa3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2689391359663150093, guid: 24914cad8871ccd4e867ca102af8ffa3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2689391359663150093, guid: 24914cad8871ccd4e867ca102af8ffa3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -755,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127112600597190700, guid: 24914cad8871ccd4e867ca102af8ffa3, type: 3}
       propertyPath: m_Name
-      value: Square
+      value: Store
       objectReference: {fileID: 0}
     - target: {fileID: 5508623622722456983, guid: 24914cad8871ccd4e867ca102af8ffa3, type: 3}
       propertyPath: m_Color.b
