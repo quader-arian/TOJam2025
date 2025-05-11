@@ -250,7 +250,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.87
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -275,7 +275,7 @@ Transform:
   m_GameObject: {fileID: 506396303}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 1.92, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -657,7 +657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1165491743
 RectTransform:
   m_ObjectHideFlags: 0
@@ -692,6 +692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objects:
   - {fileID: 365016230}
+  - {fileID: 1165491742}
 --- !u!114 &1165491745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,6 +1059,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.9245283
       objectReference: {fileID: 0}
+    - target: {fileID: 7975497301182471250, guid: 24914cad8871ccd4e867ca102af8ffa3, type: 3}
+      propertyPath: objects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975497301182471250, guid: 24914cad8871ccd4e867ca102af8ffa3, type: 3}
+      propertyPath: objects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1165491742}
+    - target: {fileID: 8490184196248667567, guid: 24914cad8871ccd4e867ca102af8ffa3, type: 3}
+      propertyPath: moneyStats
+      value: 
+      objectReference: {fileID: 531654922}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
