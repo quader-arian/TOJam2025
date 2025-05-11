@@ -1258,7 +1258,7 @@ MonoBehaviour:
   isWater: 0
   isNutrients: 0
   isOxygen: 0
-  title: Robot depot
+  title: Robot Depot
 --- !u!1 &5583277437540756588
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class SBCController : MonoBehaviour
     public int missionType = 0;
     public int target = 10;
     public int healthLoss = 20;
+    public int successes = 0;
     public TMP_Text text;
 
     // Start is called before the first frame update
@@ -68,10 +69,11 @@ public class SBCController : MonoBehaviour
             }
             else
             {
+                successes += 1;
                 missionType = Random.Range(0, 3);
                 if (missionType == 0)
                 {
-                    target = stats.GetComponent<ScoreController>().rooms + (int)(stats.GetComponent<ScoreController>().rooms * 0.1);
+                    target = stats.GetComponent<ScoreController>().rooms + (int)(stats.GetComponent<ScoreController>().rooms * (0.5 + (0.1 * successes)));
                 }
                 else if (missionType == 1)
                 {

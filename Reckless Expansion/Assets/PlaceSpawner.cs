@@ -62,7 +62,7 @@ public class PlaceSpawner : MonoBehaviour
     {
         builds[i] = Instantiate(rooms[Random.Range(0, rooms.Length)], spawners[i].transform.position, spawners[i].transform.rotation);
         builds[i].transform.parent = this.gameObject.transform;
-        builds[i].tag = null;
+        builds[i].tag = "Untagged";
         builds[i].GetComponent<DragTransform>().enabled = false;
         foreach (Transform child in builds[i].transform)
         {
