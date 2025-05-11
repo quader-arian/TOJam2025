@@ -1032,11 +1032,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 225
-  popGain: 15
+  popGain: 12
   currencyGain: 0
   malfunction: 0
   type: 0
   additionalInfo: 
+  isWater: 0
+  isNutrients: 0
+  isOxygen: 0
 --- !u!1 &4668922454872155523
 GameObject:
   m_ObjectHideFlags: 0

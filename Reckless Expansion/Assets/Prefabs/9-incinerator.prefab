@@ -916,12 +916,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7bb4e07bcd4b14ab76da9f82ee1dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 700
-  popGain: 5
+  cost: 800
+  popGain: 3
   currencyGain: 10
   malfunction: 0
   type: 4
   additionalInfo: currency
+  isWater: 0
+  isNutrients: 0
+  isOxygen: 0
 --- !u!1 &4754132707825130429
 GameObject:
   m_ObjectHideFlags: 0

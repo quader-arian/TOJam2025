@@ -811,6 +811,9 @@ MonoBehaviour:
   malfunction: 0
   type: 1
   additionalInfo: water
+  isWater: 1
+  isNutrients: 0
+  isOxygen: 0
 --- !u!1 &4754132707825130429
 GameObject:
   m_ObjectHideFlags: 0
