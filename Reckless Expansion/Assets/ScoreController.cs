@@ -24,18 +24,18 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime * 600;
+        timer += Time.deltaTime;
 
-        int seconds = (int)(timer % 60);
-        int minutes = (int)(timer / 60);
+        int minutes = Mathf.FloorToInt(timer / 60F);
+        int seconds = Mathf.FloorToInt(timer % 60F);
         int hours = (int)(timer / 3600);
 
-        string timerString = string.Format("{0:0}:{1:00}:{2:00}", hours, minutes, seconds);
+        string timerString = string.Format("{0:00}:{1:00}", minutes, seconds);
         rooms = GameObject.FindGameObjectsWithTag("Place").Length;
         if(seconds != lastSeconds)
         {
-            score += rooms * 55;
-            money += rooms * 35;
+            score += rooms * 10;
+            money += rooms * 5;
             lastSeconds = seconds;
         }
 
