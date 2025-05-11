@@ -1143,7 +1143,7 @@ MonoBehaviour:
   cost: 1750
   popGain: 0
   currencyGain: 0
-  malfunction: 0
+  malfunction: 75
   type: 0
   additionalInfo: adds power
   isWater: 0

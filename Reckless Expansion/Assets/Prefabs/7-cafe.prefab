@@ -805,7 +805,7 @@ MonoBehaviour:
   cost: 350
   popGain: 4
   currencyGain: 0
-  malfunction: 0
+  malfunction: 75
   type: 2
   additionalInfo: 'nutrients '
   isWater: 0

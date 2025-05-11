@@ -805,7 +805,7 @@ MonoBehaviour:
   cost: 375
   popGain: 5
   currencyGain: 0
-  malfunction: 0
+  malfunction: 75
   type: 1
   additionalInfo: water
   isWater: 1
