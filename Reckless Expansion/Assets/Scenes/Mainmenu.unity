@@ -1367,6 +1367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio controller
       objectReference: {fileID: 0}
+    - target: {fileID: 8375758185964675271, guid: 6d5b855aca8759849a161bf371a4b2b0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8498918267498719311, guid: 6d5b855aca8759849a161bf371a4b2b0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.1165016
@@ -1406,6 +1410,14 @@ PrefabInstance:
     - target: {fileID: 8498918267498719311, guid: 6d5b855aca8759849a161bf371a4b2b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499366443024363685, guid: 6d5b855aca8759849a161bf371a4b2b0, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499366443024363685, guid: 6d5b855aca8759849a161bf371a4b2b0, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
