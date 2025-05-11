@@ -1,7 +1,8 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
-class DragTransform : MonoBehaviour
+class DragTransformClassic : MonoBehaviour
 {
     public Color mouseOverColor = Color.blue;
     private Color originalColor;
@@ -17,29 +18,13 @@ class DragTransform : MonoBehaviour
     void OnMouseEnter()
     {
         if (!this.enabled) return;
-        foreach (Transform child in transform)
-        {
-            if(child.tag == "Room")
-            {
-                child.GetComponent<Renderer>().material.color = mouseOverColor;
-            }
-        }
+        GetComponent<Renderer>().material.color = mouseOverColor;
     }
 
     void OnMouseExit()
     {
         if (!this.enabled) return;
-        ResetColor();
-    }
-    public void ResetColor()
-    {
-        foreach (Transform child in transform)
-        {
-            if (child.tag == "Room")
-            {
-                child.GetComponent<Renderer>().material.color = originalColor;
-            }
-        }
+        GetComponent<Renderer>().material.color = originalColor;
     }
 
     void OnMouseDown()
@@ -56,14 +41,6 @@ class DragTransform : MonoBehaviour
     {
         if (!this.enabled) return;
         dragging = false;
-        foreach (Transform child in transform)
-        {
-            if(child.GetComponent<Connection>() != null)
-            {
-                child.GetComponent<Connection>().LockCheck();
-
-            }
-        }
     }
 
     void Update()
