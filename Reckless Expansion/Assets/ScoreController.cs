@@ -53,6 +53,6 @@ public class ScoreController : MonoBehaviour
             adding = true;
         }
 
-        tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nLife support tokens: " + tokens + "\nRooms: " + (rooms-roomSubtract) + "\nHealth: " + health;
+        tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nLife Support tokens: ¥" + tokens + "\nRooms: " + (rooms-roomSubtract) + "\nHealth: " + health;
     }
 }
