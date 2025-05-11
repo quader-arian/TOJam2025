@@ -24,7 +24,6 @@ public class movecontrollr : MonoBehaviour
         }
         if (left.GetComponent<Movecontrol>().mousedOver && right.GetComponent<Movecontrol>().mousedOver && rightOpen==false && rightFirst)
         {
-            left.GetComponent<Movecontrol>().mousedOver = false;
             right.GetComponent<Movecontrol>().mousedOver = false;
             rightFirst = false;
         }

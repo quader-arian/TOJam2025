@@ -365,7 +365,7 @@ MonoBehaviour:
   isWater: 0
   isNutrients: 1
   isOxygen: 0
-  title: Nutrients life support
+  title: Nutrients Life Support
 --- !u!1 &7300190954018527967
 GameObject:
   m_ObjectHideFlags: 0

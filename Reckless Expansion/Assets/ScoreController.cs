@@ -43,16 +43,16 @@ public class ScoreController : MonoBehaviour
             lastSeconds = seconds;
         }
 
-        if (seconds % 10 == 0 && adding)
+        if (seconds % 30 == 0 && adding)
         {
-            tokens += 5;
+            tokens += 2;
             adding = false;
         }
-        if (seconds % 10 == 1)
+        if (seconds % 30 == 1)
         {
             adding = true;
         }
 
-        tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nLife support tokens: " + tokens + "\nRooms: " + (rooms-roomSubtract) + "\nHealth: " + health;
+        tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nLife Support Tokens: ¥" + tokens + "\nRooms: " + (rooms-roomSubtract) + "\nHealth: " + health;
     }
 }
