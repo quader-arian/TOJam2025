@@ -9,6 +9,7 @@ public class movecontrollr : MonoBehaviour
     public GameObject right;
     public int swipeCount;
     public bool rightOpen = false;
+    public bool rightFirst = false;
 
     // Update is called once per frame
     void Update()
@@ -16,6 +17,16 @@ public class movecontrollr : MonoBehaviour
         if (left.GetComponent<Movecontrol>().mousedOver == true && right.GetComponent<Movecontrol>().mousedOver == false)
         {
             rightOpen = true;
+        }
+        if (left.GetComponent<Movecontrol>().mousedOver == false && right.GetComponent<Movecontrol>().mousedOver == true)
+        {
+            rightFirst = true;
+        }
+        if (left.GetComponent<Movecontrol>().mousedOver && right.GetComponent<Movecontrol>().mousedOver && rightOpen==false && rightFirst)
+        {
+            left.GetComponent<Movecontrol>().mousedOver = false;
+            right.GetComponent<Movecontrol>().mousedOver = false;
+            rightFirst = false;
         }
         if (left.GetComponent<Movecontrol>().mousedOver && right.GetComponent<Movecontrol>().mousedOver && rightOpen)
         {
