@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 8325577368350971745}
   - component: {fileID: 1174409485534497951}
   m_Layer: 0
-  m_Name: Store
+  m_Name: Store 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -653,23 +653,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 4504629362659885565, guid: 78b27975bcd2c2448a7b925cd9742af4, type: 3}
-  - {fileID: 4504629362659885565, guid: 0265b9607df14214899259de353a65dc, type: 3}
-  - {fileID: 4504629362659885565, guid: fb8c24ed527a91b4f919ba37ff32bc2b, type: 3}
-  - {fileID: 4504629362659885565, guid: 2cd010e83cdaff64eac5696693c2c64f, type: 3}
-  - {fileID: 4504629362659885565, guid: a93b41a2a370c624ca114072bb08989a, type: 3}
-  - {fileID: 4504629362659885565, guid: 98f1038708ac66342ab1cb6361d92f6e, type: 3}
-  - {fileID: 4504629362659885565, guid: fa59aaded2debdc448a9bd885631cbd4, type: 3}
-  - {fileID: 4504629362659885565, guid: 43ae1c0975381e84fac21bdb9de983ca, type: 3}
-  - {fileID: 4504629362659885565, guid: 5a09f439ca0e0aa47b348062ad739bc2, type: 3}
-  - {fileID: 4504629362659885565, guid: 868832cf991fc4041bdf742885155b4b, type: 3}
-  - {fileID: 4504629362659885565, guid: 76d8b6423d9166c41960ba99e53b5672, type: 3}
-  - {fileID: 4504629362659885565, guid: 326dde8846867f14a9c960fd4fe23c84, type: 3}
-  - {fileID: 4504629362659885565, guid: c0c8e50a16176b241a69441ec02325a9, type: 3}
-  - {fileID: 4504629362659885565, guid: 415e76d5e5324064fb6f13b940890014, type: 3}
-  - {fileID: 4504629362659885565, guid: 0d4e76b4570f3d540b99073f6e157c23, type: 3}
-  - {fileID: 4504629362659885565, guid: 148650209ea2dcf44a9761d1a9457155, type: 3}
-  - {fileID: 4504629362659885565, guid: 94b3c3f0f94952649837c75ec5385909, type: 3}
+  - {fileID: 4504629362659885565, guid: a2f9b2f7454d3714ebba9270eb4d354b, type: 3}
+  - {fileID: 4504629362659885565, guid: d84bfa70b2a16604f8a52882e05e1423, type: 3}
+  - {fileID: 4504629362659885565, guid: 0ebf5f0f8d6daef4e9b5f72534949624, type: 3}
   spawners:
   - {fileID: 5966541337154289368}
   - {fileID: 3968026130929577669}

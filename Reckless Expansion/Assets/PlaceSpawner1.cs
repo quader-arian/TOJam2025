@@ -4,7 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEditor.Build.Content;
 using UnityEngine.UI;
-public class PlaceSpawner : MonoBehaviour
+
+public class PlaceSpawner1 : MonoBehaviour
 {
     public GameObject[] rooms;
     public GameObject[] spawners;
@@ -40,10 +41,10 @@ public class PlaceSpawner : MonoBehaviour
 
     public void attemptBuy(int i)
     {
-        if (builds[i].GetComponent<RoomStats>().cost <= moneyStats.GetComponent<ScoreController>().money)
+        if (builds[i].GetComponent<RoomStats>().cost <= moneyStats.GetComponent<ScoreController>().tokens)
         {
             buyButtons[i].GetComponent<Button>().interactable = false;
-            moneyStats.GetComponent<ScoreController>().money -= builds[i].GetComponent<RoomStats>().cost;
+            moneyStats.GetComponent<ScoreController>().tokens -= builds[i].GetComponent<RoomStats>().cost;
             builds[i].GetComponent<DragTransform>().enabled = true;
             foreach (Transform child in builds[i].transform)
             {
@@ -59,7 +60,7 @@ public class PlaceSpawner : MonoBehaviour
 
     void spawnRoom(int i)
     {
-        builds[i] = Instantiate(rooms[Random.Range(0, rooms.Length)], spawners[i].transform.position, spawners[i].transform.rotation);
+        builds[i] = Instantiate(rooms[i], spawners[i].transform.position, spawners[i].transform.rotation);
         builds[i].transform.parent = this.gameObject.transform;
         builds[i].GetComponent<DragTransform>().enabled = false;
         foreach (Transform child in builds[i].transform)
@@ -69,6 +70,6 @@ public class PlaceSpawner : MonoBehaviour
                 child.GetComponent<Connection>().enabled = false;
             }
         }
-        buyButtons[i].transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = builds[i].GetComponent<RoomStats>().title + "\n$" + builds[i].GetComponent<RoomStats>().cost;
+        buyButtons[i].transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = builds[i].GetComponent<RoomStats>().title + "\n¥" + builds[i].GetComponent<RoomStats>().cost;
     }
 }
