@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Movecontrol : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    public GameObject[] obstaclesTemplate;
-
-    void Start()
+    public bool mousedOver;
+    void OnMouseExit()
     {
-        
+        mousedOver = true;
     }
 
     // Update is called once per frame
