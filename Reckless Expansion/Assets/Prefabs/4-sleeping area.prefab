@@ -1040,7 +1040,7 @@ MonoBehaviour:
   isWater: 0
   isNutrients: 0
   isOxygen: 0
-  name: Sleeping area
+  title: Sleeping area
 --- !u!1 &4668922454872155523
 GameObject:
   m_ObjectHideFlags: 0
