@@ -10,7 +10,7 @@ TagManager:
   - Right
   - Room
   - Place
-  - Leftmove
+  - Stats
   layers:
   - Default
   - TransparentFX
