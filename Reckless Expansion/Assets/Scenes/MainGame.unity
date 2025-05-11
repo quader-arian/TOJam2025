@@ -529,7 +529,6 @@ MonoBehaviour:
   timer: 0
   tmpt: {fileID: 2024408695}
   lastSeconds: 0
-  roomSubtract: 3
   adding: 0
 --- !u!4 &531654924
 Transform:
@@ -1197,6 +1196,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: 1
+--- !u!1 &1607918696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607918698}
+  - component: {fileID: 1607918697}
+  m_Layer: 0
+  m_Name: SBC Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1607918697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607918696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b631d723ce6cb46bb4a415e0d2462b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerReset: 60
+  timer: 60
+  stats: {fileID: 531654922}
+  missionType: 0
+  target: 10
+  healthLoss: 20
+  text: {fileID: 2020064288}
+--- !u!4 &1607918698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607918696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 537.3569, y: 255.44826, z: -2.1591856}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1951365115 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4127112600597190700, guid: c935541d33a8a5746baa72d45fec76fc, type: 3}
@@ -1593,8 +1643,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1214879891}
   - {fileID: 1076816875}
-  - {fileID: 1125482299}
-  - {fileID: 531654924}
   - {fileID: 300164208}
   - {fileID: 1677614870816348960}
   - {fileID: 24815691}
+  - {fileID: 1607918698}
+  - {fileID: 531654924}
+  - {fileID: 1125482299}
