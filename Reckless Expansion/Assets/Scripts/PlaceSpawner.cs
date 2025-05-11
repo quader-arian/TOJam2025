@@ -45,6 +45,7 @@ public class PlaceSpawner : MonoBehaviour
             buyButtons[i].GetComponent<Button>().interactable = false;
             moneyStats.GetComponent<ScoreController>().money -= builds[i].GetComponent<RoomStats>().cost;
             builds[i].GetComponent<DragTransform>().enabled = true;
+            builds[i].GetComponent<MalfunctionController>().enabled = true;
             builds[i].tag = "Place";
             foreach (Transform child in builds[i].transform)
             {
@@ -64,6 +65,7 @@ public class PlaceSpawner : MonoBehaviour
         builds[i].transform.parent = this.gameObject.transform;
         builds[i].tag = "Untagged";
         builds[i].GetComponent<DragTransform>().enabled = false;
+        builds[i].GetComponent<MalfunctionController>().enabled = false;
         foreach (Transform child in builds[i].transform)
         {
             if (child.tag == "Up" || child.tag == "Down" || child.tag == "Left" || child.tag == "Right")
