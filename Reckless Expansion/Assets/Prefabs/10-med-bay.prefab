@@ -453,8 +453,9 @@ GameObject:
   - component: {fileID: 7115645270729472485}
   - component: {fileID: 6851261778742936718}
   - component: {fileID: 8673824024908495497}
+  - component: {fileID: 5602275537482764763}
   m_Layer: 0
-  m_Name: 5-8
+  m_Name: 10-med-bay
   m_TagString: Place
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,6 +568,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ecb66a9085b1d4d9ab67eed2a6c6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5602275537482764763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7bb4e07bcd4b14ab76da9f82ee1dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 950
+  popGain: 6
+  currencyGain: 0
+  malfunction: 0
+  type: 5
+  additionalInfo: add health
+  isWater: 0
+  isNutrients: 0
+  isOxygen: 0
 --- !u!1 &7300190954018527967
 GameObject:
   m_ObjectHideFlags: 0
