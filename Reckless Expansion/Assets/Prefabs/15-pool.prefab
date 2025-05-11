@@ -807,7 +807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 700
   popGain: 0
-  currencyGain: 45
+  currencyGain: 25
   malfunction: 0
   type: 1
   additionalInfo: water
