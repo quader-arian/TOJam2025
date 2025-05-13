@@ -10,6 +10,7 @@ public class PlaceSpawner : MonoBehaviour
     public GameObject[] spawners;
     public GameObject[] buyButtons;
     public GameObject moneyStats;
+    public GameObject button;
     public int type = 0;
     GameObject[] builds = new GameObject[3];
     int bought = -1;
@@ -36,6 +37,12 @@ public class PlaceSpawner : MonoBehaviour
 
         if (bought >= 0)
         {
+            if (builds[bought].GetComponent<DragTransform>().touches == 1)
+            {
+                gameObject.SetActive(false);
+                button.SetActive(true);
+                builds[bought].GetComponent<DragTransform>().touches ++;
+            }
             if (!builds[bought].GetComponent<DragTransform>().enabled)
             {
                 buyButtons[bought].GetComponent<Button>().interactable = true;

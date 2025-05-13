@@ -847,6 +847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseOverColor: {r: 0, g: 0, b: 1, a: 1}
   dragging: 0
+  touches: 0
 --- !u!61 &6851261778742936718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -925,6 +926,9 @@ MonoBehaviour:
   isWater: 0
   isNutrients: 0
   isOxygen: 1
+  isWaterConnected: 0
+  isNutrientsConnected: 0
+  isOxygenConnected: 0
   title: Jetpacks
 --- !u!114 &3430786442416326054
 MonoBehaviour:

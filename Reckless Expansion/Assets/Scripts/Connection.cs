@@ -21,7 +21,7 @@ public class Connection : MonoBehaviour
     {
     }
 
-    public void LockCheck(bool locked)
+    public void LockCheck(bool lockIt)
     {
         GameObject[] connects = null;
         if (tag == "Up")
@@ -74,7 +74,7 @@ public class Connection : MonoBehaviour
         {
             for (int j = i + 1; j < rooms.Length; j++)
             {
-                Debug.Log(rooms[i].transform.position + " " + rooms[j].transform.position);
+                //Debug.Log(rooms[i].transform.position + " " + rooms[j].transform.position);
                 if (rooms[i].transform.position == rooms[j].transform.position)
                 {
                     interesectFound = true;
@@ -86,14 +86,42 @@ public class Connection : MonoBehaviour
         if (!interesectFound && pipesConnected)
         {
             GetComponentInParent<DragTransform>().ResetColor();
-            if (locked)
+            if (lockIt)
             {
                 foreach (GameObject p in potentialLinks)
                 {
                     p.GetComponent<Connection>().locked = true;
+                    checkAttachedSupport(p);
                 }
                 GetComponentInParent<DragTransform>().enabled = false;
             }
+        }
+    }
+    
+    void checkAttachedSupport(GameObject g)
+    {
+        RoomStats other = g.transform.parent.gameObject.GetComponent<RoomStats>();
+        RoomStats current = transform.parent.gameObject.GetComponent<RoomStats>();
+        updateSupportStats(current, other);
+        updateSupportStats(other, current);
+    }
+
+    void updateSupportStats(RoomStats current, RoomStats other)
+    {
+        if (other.isNutrients)
+        {
+            current.isNutrientsConnected = true;
+            Debug.Log("Nutrients Connected");
+        }
+        else if (other.isOxygen)
+        {
+            current.isOxygenConnected = true;
+            Debug.Log("Oxygen Connected");
+        }
+        else if (other.isWater)
+        {
+            current.isWaterConnected = true;
+            Debug.Log("Water Connected");
         }
     }
 }

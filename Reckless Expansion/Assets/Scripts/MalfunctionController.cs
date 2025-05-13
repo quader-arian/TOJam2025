@@ -12,6 +12,7 @@ public class MalfunctionController : MonoBehaviour
     public float timer;
     public int lastSeconds;
     public GameObject minigame;
+    public float[] rates = {0.75f, 0.5f, 0.25f, 0.05f};
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +29,46 @@ public class MalfunctionController : MonoBehaviour
         if (seconds != lastSeconds && minigame.activeSelf)
         {
             GameObject.FindWithTag("Stats").GetComponent<ScoreController>().health -= 1;
-            lastSeconds = seconds;
         }
 
         if (timer < 0 )
         {
-            if(Random.Range(0, 100) < GetComponent<RoomStats>().malfunction)
+            RoomStats mal = GetComponent<RoomStats>();
+            int malfunctionCheck = 0;
+
+            if (mal.isNutrientsConnected)
+            {
+                malfunctionCheck++;
+            }if (mal.isOxygenConnected)
+            {
+                malfunctionCheck++;
+            }if (mal.isWaterConnected)
+            {
+                malfunctionCheck++;
+            }
+            Debug.Log("Support Connects: " + malfunctionCheck);
+
+            float malfunctionChance = rates[0];
+            if (malfunctionCheck == 1)
+            {
+                malfunctionChance = rates[1];
+            }else if (malfunctionCheck == 2)
+            {
+                malfunctionChance = rates[2];
+            }
+            else if (malfunctionCheck == 3)
+            {
+                malfunctionChance = rates[3];
+            }
+
+            float outcome = Random.value;
+            Debug.Log(mal.title+" has "+outcome + " needing to beat " + malfunctionChance);
+            if(outcome < malfunctionChance)
             {
                 minigame.SetActive(true);
             }
             timer = timerReset;
-            lastSeconds = seconds;
         }
-        
+        lastSeconds = seconds;
     }
 }

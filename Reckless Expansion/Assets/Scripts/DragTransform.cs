@@ -8,6 +8,7 @@ class DragTransform : MonoBehaviour
     public bool dragging = false;
     private float distance;
     private Vector3 startDist;
+    public int touches = 0;
 
     private void Start()
     {
@@ -50,8 +51,7 @@ class DragTransform : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Vector3 rayPoint = ray.GetPoint(distance);
         startDist = transform.position - rayPoint;
-
-        
+        touches++;
     }
 
     void OnMouseUp()

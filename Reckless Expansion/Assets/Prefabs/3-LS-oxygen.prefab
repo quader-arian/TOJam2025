@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseOverColor: {r: 0, g: 0, b: 1, a: 1}
   dragging: 0
+  touches: 0
 --- !u!61 &6851261778742936718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -252,12 +253,14 @@ MonoBehaviour:
   cost: 1
   popGain: 0
   currencyGain: 0
-  malfunction: 0
   type: 3
   additionalInfo: ' '
   isWater: 0
   isNutrients: 0
   isOxygen: 1
+  isWaterConnected: 0
+  isNutrientsConnected: 0
+  isOxygenConnected: 1
   title: Oxygen Life Support
 --- !u!114 &154483375728574050
 MonoBehaviour:
@@ -275,6 +278,11 @@ MonoBehaviour:
   timer: 0
   lastSeconds: 0
   minigame: {fileID: 372927336180827990}
+  rates:
+  - 0.75
+  - 0.5
+  - 0.25
+  - 0.05
 --- !u!1 &5737182249588078027
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +686,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581327665031598344, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.507859
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.5041747
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.798
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.065
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.76595
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.1217203
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.668
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.103
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338422915772093394, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6858522527295408159, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}

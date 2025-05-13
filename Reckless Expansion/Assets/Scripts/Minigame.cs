@@ -32,7 +32,7 @@ public class Minigame : MonoBehaviour
                     check = check && child.GetComponent<MinigameTrigger>().entered;
                 }
             }
-            Debug.Log(check);
+            //Debug.Log(check);
             if (check)
             {
                 foreach (Transform child in transform)

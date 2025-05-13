@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseOverColor: {r: 0, g: 0, b: 1, a: 1}
   dragging: 0
+  touches: 0
 --- !u!61 &6851261778742936718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -252,12 +253,14 @@ MonoBehaviour:
   cost: 1
   popGain: 0
   currencyGain: 0
-  malfunction: 0
   type: 1
   additionalInfo: ' '
   isWater: 1
   isNutrients: 0
   isOxygen: 0
+  isWaterConnected: 1
+  isNutrientsConnected: 0
+  isOxygenConnected: 0
   title: Water Life Support
 --- !u!114 &4996353976080050632
 MonoBehaviour:
@@ -275,6 +278,11 @@ MonoBehaviour:
   timer: 0
   lastSeconds: 0
   minigame: {fileID: 5773513400290622639}
+  rates:
+  - 0.75
+  - 0.5
+  - 0.25
+  - 0.05
 --- !u!1 &6871066813087531694
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,9 +502,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.553804
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.395534
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.641
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6446245
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.395534
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 6858522527295408159, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8598614355821113104, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_Name

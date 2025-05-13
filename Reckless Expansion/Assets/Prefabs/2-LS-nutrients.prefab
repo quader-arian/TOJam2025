@@ -277,6 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseOverColor: {r: 0, g: 0, b: 1, a: 1}
   dragging: 0
+  touches: 0
 --- !u!61 &6851261778742936718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -349,12 +350,14 @@ MonoBehaviour:
   cost: 1
   popGain: 0
   currencyGain: 0
-  malfunction: 0
   type: 2
   additionalInfo: ' '
   isWater: 0
   isNutrients: 1
   isOxygen: 0
+  isWaterConnected: 0
+  isNutrientsConnected: 1
+  isOxygenConnected: 0
   title: Nutrients Life Support
 --- !u!114 &7725411911811553084
 MonoBehaviour:
@@ -372,6 +375,11 @@ MonoBehaviour:
   timer: 0
   lastSeconds: 0
   minigame: {fileID: 4506976096386786903}
+  rates:
+  - 0.75
+  - 0.5
+  - 0.25
+  - 0.05
 --- !u!1001 &142267203217054016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -556,9 +564,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6858522527295408159, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8323417
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.638384
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.0311666
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.298409
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.616
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.093
+      objectReference: {fileID: 0}
+    - target: {fileID: 5338422915772093394, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858522527295408159, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8598614355821113104, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_Name

@@ -9,7 +9,7 @@ public class ScoreController : MonoBehaviour
 
     public float score;
     public float money;
-    public float health;
+    public float health = 100;
     public float tokens;
     public int rooms;
     public float timer = 0;
@@ -20,8 +20,6 @@ public class ScoreController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 100;
-        tokens = 0;
     }
 
     // Update is called once per frame
