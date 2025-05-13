@@ -10,6 +10,7 @@ public class PlaceSpawner : MonoBehaviour
     public GameObject[] spawners;
     public GameObject[] buyButtons;
     public GameObject moneyStats;
+    public int type = 0;
     GameObject[] builds = new GameObject[3];
     int bought = -1;
 
@@ -25,7 +26,14 @@ public class PlaceSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float money = moneyStats.GetComponent<ScoreController>().money;
+        if (type == 0) { 
+            float money = moneyStats.GetComponent<ScoreController>().money; 
+        }
+        else
+        {
+            float money = moneyStats.GetComponent<ScoreController>().tokens;
+        }
+
         if (bought >= 0)
         {
             if (!builds[bought].GetComponent<DragTransform>().enabled)
@@ -40,10 +48,27 @@ public class PlaceSpawner : MonoBehaviour
 
     public void attemptBuy(int i)
     {
-        if (builds[i].GetComponent<RoomStats>().cost <= moneyStats.GetComponent<ScoreController>().money)
+        bool check = false;
+        if (type == 0)
+        {
+            check = builds[i].GetComponent<RoomStats>().cost <= moneyStats.GetComponent<ScoreController>().money;
+        }
+        else
+        {
+            check = builds[i].GetComponent<RoomStats>().cost <= moneyStats.GetComponent<ScoreController>().tokens;
+        }
+
+        if (check)
         {
             buyButtons[i].GetComponent<Button>().interactable = false;
-            moneyStats.GetComponent<ScoreController>().money -= builds[i].GetComponent<RoomStats>().cost;
+            if(type == 0)
+            {
+                moneyStats.GetComponent<ScoreController>().money -= builds[i].GetComponent<RoomStats>().cost;
+            }
+            else
+            {
+                moneyStats.GetComponent<ScoreController>().tokens -= builds[i].GetComponent<RoomStats>().cost;
+            }
             builds[i].GetComponent<DragTransform>().enabled = true;
             builds[i].GetComponent<MalfunctionController>().enabled = true;
             builds[i].tag = "Place";
@@ -61,7 +86,14 @@ public class PlaceSpawner : MonoBehaviour
 
     void spawnRoom(int i)
     {
-        builds[i] = Instantiate(rooms[Random.Range(0, rooms.Length)], spawners[i].transform.position, spawners[i].transform.rotation);
+        if(type == 0)
+        {
+            builds[i] = Instantiate(rooms[Random.Range(0, rooms.Length)], spawners[i].transform.position, spawners[i].transform.rotation);
+        }
+        else
+        {
+            builds[i] = Instantiate(rooms[i], spawners[i].transform.position, spawners[i].transform.rotation);
+        }
         builds[i].transform.parent = this.gameObject.transform;
         builds[i].tag = "Untagged";
         builds[i].GetComponent<DragTransform>().enabled = false;

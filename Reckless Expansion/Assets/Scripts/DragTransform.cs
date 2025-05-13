@@ -50,6 +50,8 @@ class DragTransform : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Vector3 rayPoint = ray.GetPoint(distance);
         startDist = transform.position - rayPoint;
+
+        
     }
 
     void OnMouseUp()
@@ -60,7 +62,7 @@ class DragTransform : MonoBehaviour
         {
             if(child.GetComponent<Connection>() != null)
             {
-                child.GetComponent<Connection>().LockCheck();
+                child.GetComponent<Connection>().LockCheck(true);
 
             }
         }
@@ -75,6 +77,15 @@ class DragTransform : MonoBehaviour
             transform.position = rayPoint + startDist;
             var curr = transform.position;
             transform.position = new Vector3(Mathf.Round(curr.x), Mathf.Round(curr.y), Mathf.Round(curr.z));
+
+            foreach (Transform child in transform)
+            {
+                if (child.GetComponent<Connection>() != null)
+                {
+                    child.GetComponent<Connection>().LockCheck(false);
+
+                }
+            }
         }
     }
 }

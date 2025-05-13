@@ -21,7 +21,7 @@ public class Connection : MonoBehaviour
     {
     }
 
-    public void LockCheck()
+    public void LockCheck(bool locked)
     {
         GameObject[] connects = null;
         if (tag == "Up")
@@ -86,11 +86,14 @@ public class Connection : MonoBehaviour
         if (!interesectFound && pipesConnected)
         {
             GetComponentInParent<DragTransform>().ResetColor();
-            foreach (GameObject p in potentialLinks)
+            if (locked)
             {
-                p.GetComponent<Connection>().locked = true;
+                foreach (GameObject p in potentialLinks)
+                {
+                    p.GetComponent<Connection>().locked = true;
+                }
+                GetComponentInParent<DragTransform>().enabled = false;
             }
-            GetComponentInParent<DragTransform>().enabled = false;
         }
     }
 }
