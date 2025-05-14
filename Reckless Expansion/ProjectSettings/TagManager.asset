@@ -11,6 +11,7 @@ TagManager:
   - Room
   - Place
   - Stats
+  - DisplayStats
   layers:
   - Default
   - TransparentFX

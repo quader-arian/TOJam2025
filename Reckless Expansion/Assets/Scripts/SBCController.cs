@@ -9,7 +9,6 @@ public class SBCController : MonoBehaviour
 {
     public float timerReset = 60;
     public float timer = 60;
-    public GameObject stats;
     public int missionType = 0;
     public int target = 10;
     public int healthLoss = 20;
@@ -50,22 +49,21 @@ public class SBCController : MonoBehaviour
         {
             timer = timerReset;
             int currentStat;
-            if(missionType == 0)
+            ScoreController stats = GameObject.FindWithTag("Stats").GetComponent<ScoreController>();
+            if (missionType == 0)
             {
-                currentStat = stats.GetComponent<ScoreController>().rooms;
+                currentStat = stats.rooms;
             }else if(missionType == 1)
             {
-                currentStat = (int)stats.GetComponent<ScoreController>().score;
+                currentStat = (int)stats.score;
             }else
             {
-                currentStat = (int)stats.GetComponent<ScoreController>().money;
+                currentStat = (int)stats.money;
             }
-
-
 
             if (currentStat < target)
             {
-                stats.GetComponent<ScoreController>().health -= healthLoss;
+                stats.health -= healthLoss;
             }
             else
             {
@@ -73,15 +71,15 @@ public class SBCController : MonoBehaviour
                 missionType = Random.Range(0, 3);
                 if (missionType == 0)
                 {
-                    target = stats.GetComponent<ScoreController>().rooms + (int)(stats.GetComponent<ScoreController>().rooms * (0.5 + (0.1 * successes)));
+                    target = stats.rooms + (int)(stats.rooms * (0.5 + (0.1 * successes)));
                 }
                 else if (missionType == 1)
                 {
-                    target = (int)(stats.GetComponent<ScoreController>().score) + (int)(stats.GetComponent<ScoreController>().score * 0.1);
+                    target = (int)(stats.score) + (int)(stats.score * 0.1);
                 }
                 else
                 {
-                    target = (int)(stats.GetComponent<ScoreController>().money) + (int)(stats.GetComponent<ScoreController>().money * 0.1);
+                    target = (int)(stats.money) + (int)(stats.money * 0.1);
                 }
             }  
         }
