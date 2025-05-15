@@ -345,6 +345,8 @@ GameObject:
   - component: {fileID: 8673824024908495497}
   - component: {fileID: 6850420396658424637}
   - component: {fileID: 6884081070490403826}
+  - component: {fileID: -1029637558501637802}
+  - component: {fileID: 2288208840783294381}
   m_Layer: 0
   m_Name: 15-pool
   m_TagString: Place
@@ -441,7 +443,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -452,7 +454,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 3, y: 4}
   m_EdgeRadius: 0
 --- !u!114 &8673824024908495497
 MonoBehaviour:
@@ -482,7 +484,7 @@ MonoBehaviour:
   popGain: 0
   currencyGain: 25
   type: 1
-  additionalInfo: water
+  additionalInfo: 
   isWater: 1
   isNutrients: 0
   isOxygen: 0
@@ -511,6 +513,32 @@ MonoBehaviour:
   - 0.5
   - 0.25
   - 0.05
+--- !u!114 &-1029637558501637802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b884dfb256e325e42a662a4b7fda925b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2288208840783294381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40811e73e8d14d9478f80c9bf6bcd896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOverColor: {r: 0, g: 1, b: 0, a: 1}
+  type: 0
 --- !u!1 &4754132707825130429
 GameObject:
   m_ObjectHideFlags: 0

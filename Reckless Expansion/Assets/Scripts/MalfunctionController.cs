@@ -33,36 +33,25 @@ public class MalfunctionController : MonoBehaviour
 
         if (timer < 0 )
         {
-            RoomStats mal = GetComponent<RoomStats>();
-            int malfunctionCheck = 0;
+            RoomStats room = GetComponent<RoomStats>();
+            int supportsConnected = 0;
 
-            if (mal.isNutrientsConnected)
+            if (room.isNutrientsConnected)
             {
-                malfunctionCheck++;
-            }if (mal.isOxygenConnected)
+                supportsConnected++;
+            }if (room.isOxygenConnected)
             {
-                malfunctionCheck++;
-            }if (mal.isWaterConnected)
+                supportsConnected++;
+            }if (room.isWaterConnected)
             {
-                malfunctionCheck++;
+                supportsConnected++;
             }
-            Debug.Log("Support Connects: " + malfunctionCheck);
+            Debug.Log("Support Connects: " + supportsConnected);
 
-            float malfunctionChance = rates[0];
-            if (malfunctionCheck == 1)
-            {
-                malfunctionChance = rates[1];
-            }else if (malfunctionCheck == 2)
-            {
-                malfunctionChance = rates[2];
-            }
-            else if (malfunctionCheck == 3)
-            {
-                malfunctionChance = rates[3];
-            }
+            float malfunctionChance = rates[supportsConnected];
 
             float outcome = Random.value;
-            Debug.Log(mal.title+" has "+outcome + " needing to beat " + malfunctionChance);
+            Debug.Log(room.title+" has "+outcome + " needing to beat " + malfunctionChance);
             if(outcome < malfunctionChance)
             {
                 minigame.SetActive(true);

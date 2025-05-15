@@ -455,6 +455,8 @@ GameObject:
   - component: {fileID: 8673824024908495497}
   - component: {fileID: 5384567387027286064}
   - component: {fileID: 2221316116721215937}
+  - component: {fileID: -2916353732853131802}
+  - component: {fileID: 6211992112997908721}
   m_Layer: 0
   m_Name: 12-3d-printer
   m_TagString: Place
@@ -620,6 +622,30 @@ MonoBehaviour:
   - 0.5
   - 0.25
   - 0.05
+--- !u!114 &-2916353732853131802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b884dfb256e325e42a662a4b7fda925b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6211992112997908721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40811e73e8d14d9478f80c9bf6bcd896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7054824185398636336
 GameObject:
   m_ObjectHideFlags: 0

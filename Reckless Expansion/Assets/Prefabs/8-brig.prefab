@@ -345,6 +345,8 @@ GameObject:
   - component: {fileID: 8673824024908495497}
   - component: {fileID: 6274874367925480997}
   - component: {fileID: 2442744899379175114}
+  - component: {fileID: 6994303668157725009}
+  - component: {fileID: -6085598439250736531}
   m_Layer: 0
   m_Name: 8-brig
   m_TagString: Place
@@ -405,6 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseOverColor: {r: 0, g: 0, b: 1, a: 1}
   dragging: 0
+  touches: 0
 --- !u!61 &6851261778742936718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -477,12 +480,14 @@ MonoBehaviour:
   cost: 600
   popGain: 5
   currencyGain: 0
-  malfunction: 75
   type: 3
-  additionalInfo: oxygen
+  additionalInfo: 
   isWater: 0
   isNutrients: 0
   isOxygen: 1
+  isWaterConnected: 0
+  isNutrientsConnected: 0
+  isOxygenConnected: 0
   title: Brig
 --- !u!114 &2442744899379175114
 MonoBehaviour:
@@ -500,6 +505,35 @@ MonoBehaviour:
   timer: 0
   lastSeconds: 0
   minigame: {fileID: 2374916926778520920}
+  rates:
+  - 0.75
+  - 0.5
+  - 0.25
+  - 0.05
+--- !u!114 &6994303668157725009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b884dfb256e325e42a662a4b7fda925b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6085598439250736531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40811e73e8d14d9478f80c9bf6bcd896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7724896661491463521
 GameObject:
   m_ObjectHideFlags: 0

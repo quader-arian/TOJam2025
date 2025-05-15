@@ -566,8 +566,10 @@ GameObject:
   - component: {fileID: 8806959439316046224}
   - component: {fileID: 3187704550467288154}
   - component: {fileID: 337982768971147019}
+  - component: {fileID: 6197222817006928142}
+  - component: {fileID: -581671506475417207}
   m_Layer: 0
-  m_Name: Main Room
+  m_Name: 0-main
   m_TagString: Place
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -751,6 +753,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b884dfb256e325e42a662a4b7fda925b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6197222817006928142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b884dfb256e325e42a662a4b7fda925b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-581671506475417207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40811e73e8d14d9478f80c9bf6bcd896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4754132707825130429

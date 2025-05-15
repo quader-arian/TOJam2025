@@ -345,6 +345,8 @@ GameObject:
   - component: {fileID: 8673824024908495497}
   - component: {fileID: 8516120780820063604}
   - component: {fileID: -9031646317930063525}
+  - component: {fileID: 3021874773614508921}
+  - component: {fileID: -6419438594878669650}
   m_Layer: 0
   m_Name: 18-airlock
   m_TagString: Place
@@ -486,7 +488,7 @@ MonoBehaviour:
   additionalInfo: ' '
   isWater: 0
   isNutrients: 0
-  isOxygen: 0
+  isOxygen: 1
   isWaterConnected: 0
   isNutrientsConnected: 0
   isOxygenConnected: 0
@@ -512,6 +514,30 @@ MonoBehaviour:
   - 0.5
   - 0.25
   - 0.05
+--- !u!114 &3021874773614508921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b884dfb256e325e42a662a4b7fda925b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6419438594878669650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40811e73e8d14d9478f80c9bf6bcd896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7054824185398636336
 GameObject:
   m_ObjectHideFlags: 0

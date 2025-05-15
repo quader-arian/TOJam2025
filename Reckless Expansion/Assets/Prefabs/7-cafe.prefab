@@ -345,6 +345,8 @@ GameObject:
   - component: {fileID: 8673824024908495497}
   - component: {fileID: 5572699808642470815}
   - component: {fileID: 8012746387576613666}
+  - component: {fileID: 6035682134049609582}
+  - component: {fileID: 153480344575282409}
   m_Layer: 0
   m_Name: 7-cafe
   m_TagString: Place
@@ -405,6 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseOverColor: {r: 0, g: 0, b: 1, a: 1}
   dragging: 0
+  touches: 0
 --- !u!61 &6851261778742936718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -477,12 +480,14 @@ MonoBehaviour:
   cost: 350
   popGain: 4
   currencyGain: 0
-  malfunction: 75
   type: 2
-  additionalInfo: 'nutrients '
+  additionalInfo: ' '
   isWater: 0
   isNutrients: 1
   isOxygen: 0
+  isWaterConnected: 0
+  isNutrientsConnected: 0
+  isOxygenConnected: 0
   title: Cafe
 --- !u!114 &8012746387576613666
 MonoBehaviour:
@@ -500,6 +505,35 @@ MonoBehaviour:
   timer: 0
   lastSeconds: 0
   minigame: {fileID: 1435069491561094643}
+  rates:
+  - 0.75
+  - 0.5
+  - 0.25
+  - 0.05
+--- !u!114 &6035682134049609582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b884dfb256e325e42a662a4b7fda925b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &153480344575282409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40811e73e8d14d9478f80c9bf6bcd896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4754132707825130429
 GameObject:
   m_ObjectHideFlags: 0

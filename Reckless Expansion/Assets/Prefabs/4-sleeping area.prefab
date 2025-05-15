@@ -235,6 +235,8 @@ GameObject:
   - component: {fileID: 8673824024908495497}
   - component: {fileID: 8132607036408737599}
   - component: {fileID: 4537820616487146600}
+  - component: {fileID: -7822361968382373084}
+  - component: {fileID: -5830898232418250549}
   m_Layer: 0
   m_Name: 4-sleeping area
   m_TagString: Place
@@ -304,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseOverColor: {r: 0, g: 0, b: 1, a: 1}
   dragging: 0
+  touches: 0
 --- !u!61 &6851261778742936718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -376,12 +379,14 @@ MonoBehaviour:
   cost: 225
   popGain: 12
   currencyGain: 0
-  malfunction: 75
   type: 0
   additionalInfo: 
   isWater: 0
   isNutrients: 0
   isOxygen: 0
+  isWaterConnected: 0
+  isNutrientsConnected: 0
+  isOxygenConnected: 0
   title: Sleeping area
 --- !u!114 &4537820616487146600
 MonoBehaviour:
@@ -399,6 +404,35 @@ MonoBehaviour:
   timer: 0
   lastSeconds: 0
   minigame: {fileID: 7040113053140487985}
+  rates:
+  - 0.75
+  - 0.5
+  - 0.25
+  - 0.05
+--- !u!114 &-7822361968382373084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b884dfb256e325e42a662a4b7fda925b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5830898232418250549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40811e73e8d14d9478f80c9bf6bcd896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4668922454872155523
 GameObject:
   m_ObjectHideFlags: 0

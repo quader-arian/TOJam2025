@@ -40,7 +40,7 @@ public class ScoreController : MonoBehaviour
             foreach (GameObject p in GameObject.FindGameObjectsWithTag("Place"))
             {
                 scoreGain += (int)(p.GetComponent<RoomStats>().popGain*0.5);
-                moneyGain += p.GetComponent<RoomStats>().currencyGain;
+                moneyGain += (int)(p.GetComponent<RoomStats>().currencyGain*0.5);
             }
             score += scoreGain;
             money += moneyGain;
