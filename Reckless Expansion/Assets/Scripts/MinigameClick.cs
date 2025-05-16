@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Minigame : MonoBehaviour
+public class MinigameClick : MonoBehaviour
 {
     public GameObject[] minigames;
     public int hits;
-    public int type;
     private Color originalColor;
 
     // Start is called before the first frame update
@@ -22,31 +21,25 @@ public class Minigame : MonoBehaviour
         ChangeColor(Color.red);
         Camera.main.GetComponent<Camera>().backgroundColor = Color.red;
 
-        if (type == 0)
+        bool check = true;
+        foreach (GameObject m in minigames)
         {
-            bool check = true;
-            foreach (Transform child in transform)
+            if(m.activeSelf)
             {
-                if(child.GetComponent<MinigameTrigger>() != null)
-                {
-                    check = check && child.GetComponent<MinigameTrigger>().entered;
-                }
+                check = false;
+                break;
             }
-            //Debug.Log(check);
-            if (check)
+        }
+        //Debug.Log(check);
+        if (check)
+        {
+            foreach (GameObject m in minigames)
             {
-                foreach (Transform child in transform)
-                {
-                    if (child.GetComponent<MinigameTrigger>() != null)
-                    {
-                        child.GetComponent<MinigameTrigger>().entered = false;
-
-                    }
-                }
-                ChangeColor(originalColor);
-                Camera.main.GetComponent<Camera>().backgroundColor = Color.black;
-                this.gameObject.SetActive(false);
+                m.SetActive(true);
             }
+            ChangeColor(originalColor);
+            Camera.main.GetComponent<Camera>().backgroundColor = Color.black;
+            this.gameObject.SetActive(false);
         }
     }
 

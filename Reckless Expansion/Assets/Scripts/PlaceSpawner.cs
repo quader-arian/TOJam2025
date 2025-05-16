@@ -112,6 +112,10 @@ public class PlaceSpawner : MonoBehaviour
                 child.GetComponent<Connection>().enabled = false;
             }
         }
-        buyButtons[i].transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = builds[i].GetComponent<RoomStats>().title + "\n$" + builds[i].GetComponent<RoomStats>().cost;
+
+        string currency = "\n$";
+        if (type == 1) { currency = "\n¥"; }
+
+        buyButtons[i].transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = builds[i].GetComponent<RoomStats>().title + currency + builds[i].GetComponent<RoomStats>().cost;
     }
 }

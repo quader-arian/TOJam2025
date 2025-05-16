@@ -762,6 +762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40811e73e8d14d9478f80c9bf6bcd896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseOverColor: {r: 0, g: 1, b: 0, a: 1}
+  type: 0
 --- !u!1 &4754132707825130429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,13 +1252,77 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3742607312398154659, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742607312398154659, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949995021334204866, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949995021334204866, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7397455
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949995021334204866, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.1703097
+      objectReference: {fileID: 0}
+    - target: {fileID: 6253787232207864439, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7512644295319600123, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_text
+      value: PRESS THE ENERGY
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576662661627136219, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576662661627136219, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7397455
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576662661627136219, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.1703097
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681753670370444004, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681753670370444004, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7397455
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681753670370444004, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.1703097
+      objectReference: {fileID: 0}
     - target: {fileID: 8598614355821113104, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_Name
-      value: Minigame
+      value: MinigameClick
       objectReference: {fileID: 0}
     - target: {fileID: 8598614355821113104, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207101312088317904, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207101312088317904, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7397455
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207101312088317904, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.1703097
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
