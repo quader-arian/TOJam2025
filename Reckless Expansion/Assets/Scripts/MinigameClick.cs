@@ -7,18 +7,17 @@ public class MinigameClick : MonoBehaviour
 {
     public GameObject[] minigames;
     public int hits;
-    private Color originalColor;
+    private Color originalColor = Color.white;
 
     // Start is called before the first frame update
     void Start()
     {
-        originalColor = GetComponentInChildren<Renderer>().material.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ChangeColor(Color.red);
+        transform.parent.gameObject.GetComponent<MalfunctionController>().ChangeColor(Color.red, transform.parent.gameObject);
         Camera.main.GetComponent<Camera>().backgroundColor = Color.red;
 
         bool check = true;
@@ -37,23 +36,9 @@ public class MinigameClick : MonoBehaviour
             {
                 m.SetActive(true);
             }
-            ChangeColor(originalColor);
-            Camera.main.GetComponent<Camera>().backgroundColor = Color.black;
-            GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions -= 1;
-            transform.parent.GetComponent<MalfunctionController>().isMalfunctioning = false;
-            this.gameObject.SetActive(false);
+            transform.parent.gameObject.GetComponent<MalfunctionController>().OffMinigame(originalColor, gameObject);
         }
     }
 
-    void ChangeColor(Color c)
-    {
-        foreach (Transform child in transform.parent)
-        {
-            if (child.tag == "Room")
-            {
-                child.GetComponent<Renderer>().material.color = c;
-            }
-            
-        }
-    }
+    
 }

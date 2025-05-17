@@ -105,6 +105,7 @@ public class PlaceSpawner : MonoBehaviour
         builds[i].tag = "Untagged";
         builds[i].GetComponent<DragTransform>().enabled = false;
         builds[i].GetComponent<MalfunctionController>().enabled = false;
+        builds[i].GetComponent<ClickBoost>().enabled = false;
         foreach (Transform child in builds[i].transform)
         {
             if (child.tag == "Up" || child.tag == "Down" || child.tag == "Left" || child.tag == "Right")

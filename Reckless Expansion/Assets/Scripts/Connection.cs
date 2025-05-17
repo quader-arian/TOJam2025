@@ -94,6 +94,7 @@ public class Connection : MonoBehaviour
                     CheckAttachedRooms(p);
                 }
                 transform.parent.GetComponent<MalfunctionController>().enabled = true;
+                transform.parent.GetComponent<ClickBoost>().enabled = true;
                 GetComponentInParent<DragTransform>().enabled = false;
             }
         }

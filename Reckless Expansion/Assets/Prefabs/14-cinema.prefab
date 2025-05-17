@@ -1082,6 +1082,7 @@ MonoBehaviour:
   currencyGain: 75
   type: 0
   additionalInfo: 
+  boost: 0
   isWater: 0
   isNutrients: 0
   isOxygen: 0

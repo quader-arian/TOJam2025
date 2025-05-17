@@ -713,7 +713,8 @@ MonoBehaviour:
   popGain: 10
   currencyGain: 35
   type: 0
-  additionalInfo: ' '
+  additionalInfo: 
+  boost: 0
   isWater: 0
   isNutrients: 0
   isOxygen: 0

@@ -59,6 +59,22 @@ public class ScoreController : MonoBehaviour
             adding = true;
         }
 
+        if (malfunctions > 0)
+        {
+            ToggleAllPlaceHitboxes(false);
+        }
+        else{
+            ToggleAllPlaceHitboxes(true);
+        }
+
         tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nLife Support Tokens: ¥" + tokens + "\nRooms: " + rooms + "\nHealth: " + health;
+    }
+
+    void ToggleAllPlaceHitboxes(bool toggle)
+    {
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Place"))
+        {
+            g.GetComponent<BoxCollider2D>().enabled = toggle;
+        }
     }
 }

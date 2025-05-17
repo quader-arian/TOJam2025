@@ -4,7 +4,7 @@ using UnityEngine;
 class DragTransform : MonoBehaviour
 {
     public Color mouseOverColor = Color.blue;
-    private Color originalColor;
+    private Color originalColor = Color.white;
     public bool dragging = false;
     private float distance;
     private Vector3 startDist;
@@ -12,7 +12,6 @@ class DragTransform : MonoBehaviour
 
     private void Start()
     {
-        originalColor = GetComponentInChildren<Renderer>().material.color;
     }
 
     void OnMouseEnter()
@@ -21,6 +20,10 @@ class DragTransform : MonoBehaviour
         foreach (Transform child in transform)
         {
             if(child.tag == "Room")
+            {
+                child.GetComponent<Renderer>().material.color = mouseOverColor;
+            }
+            if (child.tag == "Image")
             {
                 child.GetComponent<Renderer>().material.color = mouseOverColor;
             }
@@ -37,6 +40,10 @@ class DragTransform : MonoBehaviour
         foreach (Transform child in transform)
         {
             if (child.tag == "Room")
+            {
+                child.GetComponent<Renderer>().material.color = originalColor;
+            }
+            if (child.tag == "Image")
             {
                 child.GetComponent<Renderer>().material.color = originalColor;
             }

@@ -6,24 +6,30 @@ public class ClickBoost : MonoBehaviour
 {
     private ScoreController controller;
     public Color mouseOverColor = Color.green;
-    private Color originalColor;
+    private Color originalColor = Color.white;
     public int type = 0;
 
     private void Start()
     {
         controller = GameObject.FindWithTag("Stats").GetComponent<ScoreController>();
-        originalColor = GetComponentInChildren<Renderer>().material.color;
     }
     private void OnMouseUp()
     {
+        if (!this.enabled) return; 
+        else {
+            controller = GameObject.FindWithTag("Stats").GetComponent<ScoreController>();
+        }
         foreach (Transform child in transform)
         {
             if (child.tag == "Room")
             {
                 child.GetComponent<Renderer>().material.color = originalColor;
             }
+            if (child.tag == "Image")
+            {
+                child.GetComponent<Renderer>().material.color = originalColor;
+            }
         }
-
 
         if (type == 0)
         {
@@ -40,9 +46,14 @@ public class ClickBoost : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (!this.enabled) return;
         foreach (Transform child in transform)
         {
             if (child.tag == "Room")
+            {
+                child.GetComponent<Renderer>().material.color = mouseOverColor;
+            }
+            if (child.tag == "Image")
             {
                 child.GetComponent<Renderer>().material.color = mouseOverColor;
             }

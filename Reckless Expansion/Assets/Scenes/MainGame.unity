@@ -505,6 +505,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -581671506475417207, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 733659458357408371, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -513,6 +517,10 @@ PrefabInstance:
       propertyPath: stats
       value: 
       objectReference: {fileID: 531654922}
+    - target: {fileID: 3187704550467288154, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3808667082740309149, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -532,6 +540,10 @@ PrefabInstance:
     - target: {fileID: 4504629362659885565, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
       propertyPath: m_Name
       value: Main Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309333662054632530, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
+      propertyPath: m_TagString
+      value: Image
       objectReference: {fileID: 0}
     - target: {fileID: 7115645270729472485, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
       propertyPath: m_Enabled
@@ -577,6 +589,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8156879312009769061, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
+      propertyPath: m_TagString
+      value: Image
+      objectReference: {fileID: 0}
     - target: {fileID: 8568714968978929277, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -588,6 +604,10 @@ PrefabInstance:
     - target: {fileID: 8568714968978929277, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806959439316046224, guid: 00b5eb30673dda248829cbc1cf85883e, type: 3}
+      propertyPath: additionalInfo
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1085,7 +1105,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0

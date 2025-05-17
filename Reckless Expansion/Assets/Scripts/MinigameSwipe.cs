@@ -10,18 +10,17 @@ public class MinigameSwipe : MonoBehaviour
     public int maxHits;
     public TMP_Text display;
     public string message = "SWIPE LEFT TO RIGHT:";
-    private Color originalColor;
+    private Color originalColor = Color.white;
 
     // Start is called before the first frame update
     void Start()
     {
-        originalColor = GetComponentInChildren<Renderer>().material.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ChangeColor(Color.red);
+        transform.parent.gameObject.GetComponent<MalfunctionController>().ChangeColor(Color.red, transform.parent.gameObject);
         Camera.main.GetComponent<Camera>().backgroundColor = Color.red;
 
         bool check = true;
@@ -49,24 +48,8 @@ public class MinigameSwipe : MonoBehaviour
         display.text = message+ " " + (maxHits - hits);
         if (hits >= maxHits)
         {
-            ChangeColor(originalColor);
-            Camera.main.GetComponent<Camera>().backgroundColor = Color.black;
             hits = 0;
-            GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions -= 1;
-            transform.parent.GetComponent<MalfunctionController>().isMalfunctioning  = false;
-            this.gameObject.SetActive(false);
-        }
-    }
-
-    void ChangeColor(Color c)
-    {
-        foreach (Transform child in transform.parent)
-        {
-            if (child.tag == "Room")
-            {
-                child.GetComponent<Renderer>().material.color = c;
-            }
-            
+            transform.parent.gameObject.GetComponent<MalfunctionController>().OffMinigame(originalColor, gameObject);
         }
     }
 }

@@ -7,19 +7,26 @@ using UnityEngine;
 public class MinigameDrag : MonoBehaviour
 {
     public GameObject[] minigames;
+    private Vector3 [] originalPos;
     public int hits;
-    private Color originalColor;
+    private Color originalColor = Color.white;
 
     // Start is called before the first frame update
     void Start()
     {
-        originalColor = GetComponentInChildren<Renderer>().material.color;
+        originalPos = new Vector3[minigames.Length];
+        int i = 0;
+        foreach(GameObject g in minigames)
+        {
+            originalPos[i] = g.transform.position;
+            i++;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        ChangeColor(Color.red);
+        transform.parent.gameObject.GetComponent<MalfunctionController>().ChangeColor(Color.red, transform.parent.gameObject);
         Camera.main.GetComponent<Camera>().backgroundColor = Color.red;
 
         //Debug.Log(check);
@@ -31,23 +38,13 @@ public class MinigameDrag : MonoBehaviour
 
         if (check)
         {
-            ChangeColor(originalColor);
-            Camera.main.GetComponent<Camera>().backgroundColor = Color.black;
-            GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions -= 1;
-            transform.parent.GetComponent<MalfunctionController>().isMalfunctioning = false;
-            this.gameObject.SetActive(false);
-        }
-    }
-
-    void ChangeColor(Color c)
-    {
-        foreach (Transform child in transform.parent)
-        {
-            if (child.tag == "Room")
+            int i = 0;
+            foreach (GameObject g in minigames)
             {
-                child.GetComponent<Renderer>().material.color = c;
+                g.transform.position = originalPos[i];
+                i++;
             }
-            
+            transform.parent.gameObject.GetComponent<MalfunctionController>().OffMinigame(originalColor, gameObject);
         }
     }
 }

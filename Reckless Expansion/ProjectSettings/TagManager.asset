@@ -12,6 +12,7 @@ TagManager:
   - Place
   - Stats
   - DisplayStats
+  - Image
   layers:
   - Default
   - TransparentFX
