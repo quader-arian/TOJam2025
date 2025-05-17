@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class DisplayRoomStats : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class DisplayRoomStats : MonoBehaviour
     }
     void OnMouseOver()
     {
-        if (!GetComponent<DragTransform>().dragging)
+        if (!GetComponent<DragTransform>().dragging && GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions <= 0)
         {
             display.GetComponent<DisplayText>().display.SetActive(true);
             display.transform.position = transform.position + new Vector3(1, 1, 0);
@@ -29,19 +30,31 @@ public class DisplayRoomStats : MonoBehaviour
                 connections++;
                 supportsString += "W";
             }
+            else
+            {
+                supportsString += "-";
+            }
             if (room.isOxygenConnected)
             {
                 connections++;
                 supportsString += "O";
+            }
+            else
+            {
+                supportsString += "-";
             }
             if (room.isNutrientsConnected)
             {
                 connections++;
                 supportsString += "N";
             }
-            
+            else
+            {
+                supportsString += "-";
+            }
 
-            int malfunction = (int)(GetComponent<MalfunctionController>().rates[connections]*100);
+            float malfunctionTemp = GetComponent<MalfunctionController>().rates[connections] - GetComponent<MalfunctionController>().boost;
+            int malfunction = (int)(malfunctionTemp*100);
             tmpText.text += malfunction + "%\r\nSUPPORTS CONNECTED: "+ supportsString;
 
 
@@ -58,7 +71,10 @@ public class DisplayRoomStats : MonoBehaviour
             {
                 specialText += "\r\nSPECIAL: Nutrients Support";
             }
-
+            if(room.additionalInfo != "")
+            {
+                specialText += "\r\nSPECIAL: " + room.additionalInfo;
+            }
             tmpText.text += specialText;
         }
     }

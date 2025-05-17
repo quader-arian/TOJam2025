@@ -52,6 +52,8 @@ public class MinigameSwipe : MonoBehaviour
             ChangeColor(originalColor);
             Camera.main.GetComponent<Camera>().backgroundColor = Color.black;
             hits = 0;
+            GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions -= 1;
+            transform.parent.GetComponent<MalfunctionController>().isMalfunctioning  = false;
             this.gameObject.SetActive(false);
         }
     }

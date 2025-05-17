@@ -12,7 +12,7 @@ public class PlaceSpawner : MonoBehaviour
     public GameObject moneyStats;
     public GameObject button;
     public int type = 0;
-    GameObject[] builds = new GameObject[3];
+    private GameObject[] builds = new GameObject[3];
     int bought = -1;
 
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class PlaceSpawner : MonoBehaviour
     {
         for(int i = 0; i < builds.Length; i++)
         {
-            spawnRoom(i);
+            SpawnRoom(i);
         }
     }
 
@@ -47,13 +47,13 @@ public class PlaceSpawner : MonoBehaviour
             {
                 buyButtons[bought].GetComponent<Button>().interactable = true;
                 builds[bought] = null;
-                spawnRoom(bought);
+                SpawnRoom(bought);
                 bought = -1;
             }
         }
     }
 
-    public void attemptBuy(int i)
+    public void AttemptBuy(int i)
     {
         bool check = false;
         if (type == 0)
@@ -77,7 +77,6 @@ public class PlaceSpawner : MonoBehaviour
                 moneyStats.GetComponent<ScoreController>().tokens -= builds[i].GetComponent<RoomStats>().cost;
             }
             builds[i].GetComponent<DragTransform>().enabled = true;
-            builds[i].GetComponent<MalfunctionController>().enabled = true;
             builds[i].tag = "Place";
             foreach (Transform child in builds[i].transform)
             {
@@ -87,11 +86,12 @@ public class PlaceSpawner : MonoBehaviour
                 }
             }
             builds[i].transform.parent = null;
+            SpecialBoost(builds[i]);
             bought = i;
         }
     }
 
-    void spawnRoom(int i)
+    void SpawnRoom(int i)
     {
         if(type == 0)
         {
@@ -117,5 +117,32 @@ public class PlaceSpawner : MonoBehaviour
         if (type == 1) { currency = "\n¥"; }
 
         buyButtons[i].transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = builds[i].GetComponent<RoomStats>().title + currency + builds[i].GetComponent<RoomStats>().cost;
+    }
+
+    void SpecialBoost(GameObject g)
+    {
+        ScoreController stats = GameObject.FindGameObjectWithTag("Stats").GetComponent<ScoreController>();
+        string boostType = g.GetComponent<RoomStats>().additionalInfo;
+        if (boostType == "Fixes All Malfunctions")
+        {
+            foreach (GameObject child in GameObject.FindGameObjectsWithTag("Place"))
+            {
+                child.GetComponent<MalfunctionController>().minigame.SetActive(false);
+            }
+        }else if(boostType == "Recover Currency")
+        {
+            stats.money += (int)(stats.money * g.GetComponent<RoomStats>().boost);
+        }else if (boostType == "Recover Health")
+        {
+            stats.health += (int)g.GetComponent<RoomStats>().boost;
+        }else if(boostType == "Malfunction Fixes + $$ + HP")
+        {
+            foreach (GameObject child in GameObject.FindGameObjectsWithTag("Place"))
+            {
+                child.GetComponent<MalfunctionController>().minigame.SetActive(false);
+            }
+            stats.money += (int)(stats.money * g.GetComponent<RoomStats>().boost);
+            stats.health += (int)(stats.health * g.GetComponent<RoomStats>().boost);
+        }
     }
 }

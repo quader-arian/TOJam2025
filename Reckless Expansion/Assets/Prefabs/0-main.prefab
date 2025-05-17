@@ -566,7 +566,6 @@ GameObject:
   - component: {fileID: 8806959439316046224}
   - component: {fileID: 3187704550467288154}
   - component: {fileID: 337982768971147019}
-  - component: {fileID: 6197222817006928142}
   - component: {fileID: -581671506475417207}
   m_Layer: 0
   m_Name: 0-main
@@ -743,19 +742,10 @@ MonoBehaviour:
   - 0.5
   - 0.25
   - 0.05
+  boost: 0
+  malfunctionChance: 0.75
+  isMalfunctioning: 0
 --- !u!114 &337982768971147019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4504629362659885565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b884dfb256e325e42a662a4b7fda925b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6197222817006928142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2145,6 +2135,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1446346181148095529, guid: c6aef8ad3bc0a2c43ad1a05020f55171, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998524840457744524, guid: c6aef8ad3bc0a2c43ad1a05020f55171, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.45
+      objectReference: {fileID: 0}
     - target: {fileID: 3898355895625090398, guid: c6aef8ad3bc0a2c43ad1a05020f55171, type: 3}
       propertyPath: maxHits
       value: 3
@@ -2152,6 +2150,10 @@ PrefabInstance:
     - target: {fileID: 3898355895625090398, guid: c6aef8ad3bc0a2c43ad1a05020f55171, type: 3}
       propertyPath: message
       value: 'SWIPE LEFT TO RIGHT:'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967332457549236593, guid: c6aef8ad3bc0a2c43ad1a05020f55171, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8598614355821113104, guid: c6aef8ad3bc0a2c43ad1a05020f55171, type: 3}
       propertyPath: m_Name

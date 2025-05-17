@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 784967324812910358}
   - component: {fileID: 7725411911811553084}
   - component: {fileID: -5645629260995835710}
+  - component: {fileID: -1407071337591533450}
   m_Layer: 0
   m_Name: 2-LS-nutrients
   m_TagString: Place
@@ -322,7 +323,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &8673824024908495497
 MonoBehaviour:
@@ -351,8 +352,9 @@ MonoBehaviour:
   cost: 1
   popGain: 0
   currencyGain: 0
-  type: 2
-  additionalInfo: ' '
+  type: 0
+  additionalInfo: 
+  boost: 0
   isWater: 0
   isNutrients: 1
   isOxygen: 0
@@ -372,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecb48f6fe19b9644b066e997756edf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerReset: 30
+  timerReset: 20
   timer: 0
   lastSeconds: 0
   minigame: {fileID: 1537706094032318325}
@@ -381,6 +383,9 @@ MonoBehaviour:
   - 0.5
   - 0.25
   - 0.05
+  boost: 0
+  malfunctionChance: 0.75
+  isMalfunctioning: 0
 --- !u!114 &-5645629260995835710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,6 +398,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b884dfb256e325e42a662a4b7fda925b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1407071337591533450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4504629362659885565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40811e73e8d14d9478f80c9bf6bcd896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOverColor: {r: 0, g: 1, b: 0, a: 1}
+  type: 1
 --- !u!1001 &142267203217054016
 PrefabInstance:
   m_ObjectHideFlags: 0

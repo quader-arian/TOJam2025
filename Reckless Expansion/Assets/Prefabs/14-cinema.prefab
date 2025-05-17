@@ -1110,6 +1110,9 @@ MonoBehaviour:
   - 0.5
   - 0.25
   - 0.05
+  boost: 0
+  malfunctionChance: 0.75
+  isMalfunctioning: 0
 --- !u!114 &-359739729611296983
 MonoBehaviour:
   m_ObjectHideFlags: 0

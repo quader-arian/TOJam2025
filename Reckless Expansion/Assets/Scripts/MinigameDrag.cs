@@ -33,6 +33,8 @@ public class MinigameDrag : MonoBehaviour
         {
             ChangeColor(originalColor);
             Camera.main.GetComponent<Camera>().backgroundColor = Color.black;
+            GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions -= 1;
+            transform.parent.GetComponent<MalfunctionController>().isMalfunctioning = false;
             this.gameObject.SetActive(false);
         }
     }

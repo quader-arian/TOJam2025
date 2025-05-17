@@ -593,7 +593,8 @@ MonoBehaviour:
   popGain: 15
   currencyGain: 0
   type: 0
-  additionalInfo: ' '
+  additionalInfo: 
+  boost: 0
   isWater: 0
   isNutrients: 0
   isOxygen: 0
@@ -622,6 +623,9 @@ MonoBehaviour:
   - 0.5
   - 0.25
   - 0.05
+  boost: 0
+  malfunctionChance: 0.75
+  isMalfunctioning: 0
 --- !u!114 &-2916353732853131802
 MonoBehaviour:
   m_ObjectHideFlags: 0

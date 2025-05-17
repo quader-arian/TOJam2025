@@ -620,6 +620,9 @@ MonoBehaviour:
   - 0.5
   - 0.25
   - 0.05
+  boost: 0
+  malfunctionChance: 0.75
+  isMalfunctioning: 0
 --- !u!114 &-6797759895669778110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,11 +1193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8336357814789986790, guid: fa66af79e25893941b8dc72111580013, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.12
+      value: 1.08
       objectReference: {fileID: 0}
     - target: {fileID: 8336357814789986790, guid: fa66af79e25893941b8dc72111580013, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.08
+      value: 2.07
       objectReference: {fileID: 0}
     - target: {fileID: 8598614355821113104, guid: fa66af79e25893941b8dc72111580013, type: 3}
       propertyPath: m_Name

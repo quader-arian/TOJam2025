@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-using UnityEngine.SocialPlatforms.Impl;
+using System;
 
 public class MalfunctionController : MonoBehaviour
 {
@@ -13,6 +12,9 @@ public class MalfunctionController : MonoBehaviour
     public int lastSeconds;
     public GameObject minigame;
     public float[] rates = {0.75f, 0.5f, 0.25f, 0.05f};
+    public float boost = 0;
+    public float malfunctionChance = 0.75f;
+    public bool isMalfunctioning = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +28,16 @@ public class MalfunctionController : MonoBehaviour
         timer -= Time.deltaTime;
         int seconds = Mathf.FloorToInt(timer % 60F);
 
-        if (seconds != lastSeconds && minigame.activeSelf)
+        if (seconds != lastSeconds)
         {
-            GameObject.FindWithTag("Stats").GetComponent<ScoreController>().health -= 1;
+            if(boost > 0)
+            {
+                boost -= 0.01f;
+            }
+            if (minigame.activeSelf)
+            {
+                GameObject.FindWithTag("Stats").GetComponent<ScoreController>().health -= 1;
+            }
         }
 
         if (timer < 0 )
@@ -47,14 +56,21 @@ public class MalfunctionController : MonoBehaviour
                 supportsConnected++;
             }
             Debug.Log("Support Connects: " + supportsConnected);
+            malfunctionChance = rates[supportsConnected]-boost;
 
-            float malfunctionChance = rates[supportsConnected];
-
-            float outcome = Random.value;
+            float outcome = UnityEngine.Random.value;
             Debug.Log(room.title+" has "+outcome + " needing to beat " + malfunctionChance);
+
             if(outcome < malfunctionChance)
             {
                 minigame.SetActive(true);
+                isMalfunctioning = true;
+                GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions += 1;
+            }
+            else
+            {
+                if (isMalfunctioning) { GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions -= 1; }
+                isMalfunctioning = false;
             }
             timer = timerReset;
         }

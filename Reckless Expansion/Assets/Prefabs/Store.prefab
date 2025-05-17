@@ -979,7 +979,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8490184196248667567}
         m_TargetAssemblyTypeName: PlaceSpawner, Assembly-CSharp
-        m_MethodName: attemptBuy
+        m_MethodName: AttemptBuy
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1464,7 +1464,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8490184196248667567}
         m_TargetAssemblyTypeName: PlaceSpawner, Assembly-CSharp
-        m_MethodName: attemptBuy
+        m_MethodName: AttemptBuy
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1681,7 +1681,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8490184196248667567}
         m_TargetAssemblyTypeName: PlaceSpawner, Assembly-CSharp
-        m_MethodName: attemptBuy
+        m_MethodName: AttemptBuy
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -15,7 +15,9 @@ public class ScoreController : MonoBehaviour
     public float timer = 0;
     public TMP_Text tmpt;
     public int lastSeconds = 0;
-    public bool adding = false;
+    private bool adding = false;
+    public int malfunctions;
+
 
     // Start is called before the first frame update
     void Start()

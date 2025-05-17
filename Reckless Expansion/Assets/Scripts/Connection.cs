@@ -91,37 +91,45 @@ public class Connection : MonoBehaviour
                 foreach (GameObject p in potentialLinks)
                 {
                     p.GetComponent<Connection>().locked = true;
-                    checkAttachedSupport(p);
+                    CheckAttachedRooms(p);
                 }
+                transform.parent.GetComponent<MalfunctionController>().enabled = true;
                 GetComponentInParent<DragTransform>().enabled = false;
             }
         }
     }
     
-    void checkAttachedSupport(GameObject g)
+    void CheckAttachedRooms(GameObject g)
     {
-        RoomStats other = g.transform.parent.gameObject.GetComponent<RoomStats>();
-        RoomStats current = transform.parent.gameObject.GetComponent<RoomStats>();
-        updateSupportStats(current, other);
-        updateSupportStats(other, current);
+        GameObject other = g.transform.parent.gameObject;
+        GameObject current = transform.parent.gameObject;
+        UpdateSupportStats(current, other);
+        UpdateSupportStats(other, current);
+        UpdateConnectedRooms(current, other);
     }
 
-    void updateSupportStats(RoomStats current, RoomStats other)
+    void UpdateSupportStats(GameObject current, GameObject other)
     {
-        if (other.isNutrients)
+        if (other.GetComponent<RoomStats>().isNutrients)
         {
-            current.isNutrientsConnected = true;
+            current.GetComponent<RoomStats>().isNutrientsConnected = true;
             Debug.Log("Nutrients Connected");
         }
-        else if (other.isOxygen)
+        else if (other.GetComponent<RoomStats>().isOxygen)
         {
-            current.isOxygenConnected = true;
+            current.GetComponent<RoomStats>().isOxygenConnected = true;
             Debug.Log("Oxygen Connected");
         }
-        else if (other.isWater)
+        else if (other.GetComponent<RoomStats>().isWater)
         {
-            current.isWaterConnected = true;
+            current.GetComponent<RoomStats>().isWaterConnected = true;
             Debug.Log("Water Connected");
         }
+    }
+
+    void UpdateConnectedRooms(GameObject current, GameObject other)
+    {
+        current.GetComponent<RoomStats>().connectedRooms.Add(other);
+        other.GetComponent<RoomStats>().connectedRooms.Add(current);
     }
 }

@@ -16,15 +16,25 @@ public class ClickBoost : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        if(type == 0)
+        foreach (Transform child in transform)
+        {
+            if (child.tag == "Room")
+            {
+                child.GetComponent<Renderer>().material.color = originalColor;
+            }
+        }
+
+
+        if (type == 0)
         {
             controller.score++;
-            foreach (Transform child in transform)
+            controller.money++;
+        }
+        else if (type == 1)
+        {
+            foreach(GameObject child in GetComponent<RoomStats>().connectedRooms)
             {
-                if (child.tag == "Room")
-                {
-                    child.GetComponent<Renderer>().material.color = originalColor;
-                }
+                child.GetComponent<MalfunctionController>().boost += 0.01f;
             }
         }
     }

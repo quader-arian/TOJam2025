@@ -480,6 +480,7 @@ MonoBehaviour:
   currencyGain: 0
   type: 5
   additionalInfo: Recover Health
+  boost: 15
   isWater: 0
   isNutrients: 0
   isOxygen: 0
@@ -508,6 +509,9 @@ MonoBehaviour:
   - 0.5
   - 0.25
   - 0.05
+  boost: 0
+  malfunctionChance: 0.75
+  isMalfunctioning: 0
 --- !u!114 &-5131196800206304008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,7 +612,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9622642, g: 0.17611244, b: 0.17611244, a: 1}
+  m_Color: {r: 0.038791053, g: 0.9528302, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -976,15 +980,15 @@ PrefabInstance:
       objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     - target: {fileID: 245879124519186698, guid: fa66af79e25893941b8dc72111580013, type: 3}
       propertyPath: m_Color.b
-      value: 0.17611244
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 245879124519186698, guid: fa66af79e25893941b8dc72111580013, type: 3}
       propertyPath: m_Color.g
-      value: 0.17611244
+      value: 0.9528302
       objectReference: {fileID: 0}
     - target: {fileID: 245879124519186698, guid: fa66af79e25893941b8dc72111580013, type: 3}
       propertyPath: m_Color.r
-      value: 0.9622642
+      value: 0.038791053
       objectReference: {fileID: 0}
     - target: {fileID: 581327665031598344, guid: fa66af79e25893941b8dc72111580013, type: 3}
       propertyPath: m_LocalPosition.x

@@ -623,6 +623,7 @@ MonoBehaviour:
   currencyGain: 10
   type: 4
   additionalInfo: Recover Currency
+  boost: 0.25
   isWater: 0
   isNutrients: 0
   isOxygen: 0
@@ -651,6 +652,9 @@ MonoBehaviour:
   - 0.5
   - 0.25
   - 0.05
+  boost: 0
+  malfunctionChance: 0.75
+  isMalfunctioning: 0
 --- !u!114 &421978922687858805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,7 +1602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1904478405845472245, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.17
+      value: 2.27
       objectReference: {fileID: 0}
     - target: {fileID: 1904478405845472245, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1610,7 +1614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3742607312398154659, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.56
+      value: -1.82
       objectReference: {fileID: 0}
     - target: {fileID: 6253787232207864439, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_LocalPosition.x
