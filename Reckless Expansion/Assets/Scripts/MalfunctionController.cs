@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
-using Unity.VisualScripting;
 using UnityEngine;
-using System;
 
 public class MalfunctionController : MonoBehaviour
 {
@@ -28,8 +25,9 @@ public class MalfunctionController : MonoBehaviour
     {
         timer -= Time.deltaTime;
         int seconds = Mathf.FloorToInt(timer % 60F);
-        redFlash.g = 0.75f*UnityEngine.Mathf.Sin(10*timer)+0.75f;
-        redFlash.b = 0.75f*UnityEngine.Mathf.Sin(10*timer)+0.75f;
+        redFlash.r = 1.0f;
+        redFlash.g = 0.25f*UnityEngine.Mathf.Sin(8*timer)+0.25f;
+        redFlash.b = redFlash.g;
 
         if (seconds != lastSeconds)
         {
@@ -68,11 +66,9 @@ public class MalfunctionController : MonoBehaviour
             {
                 minigame.SetActive(true);
                 isMalfunctioning = true;
-                GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions += 1;
             }
             else
             {
-                if (isMalfunctioning) { GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions -= 1; }
                 isMalfunctioning = false;
             }
             timer = timerReset;
@@ -84,7 +80,6 @@ public class MalfunctionController : MonoBehaviour
     {
         ChangeColor(originalColor, gameObject);
         Camera.main.GetComponent<Camera>().backgroundColor = Color.black;
-        GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions -= 1;
         gameObject.GetComponent<MalfunctionController>().isMalfunctioning = false;
         g.gameObject.SetActive(false);
     }
@@ -94,6 +89,7 @@ public class MalfunctionController : MonoBehaviour
         Color toUse;
         if (c == Color.red)
         {
+            redFlash.r = 1.0f;
             toUse = redFlash;
         }
         else

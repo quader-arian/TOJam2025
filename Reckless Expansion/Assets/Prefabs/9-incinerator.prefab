@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4763497194259760507}
   m_Layer: 0
   m_Name: 9_Incinerator
-  m_TagString: Untagged
+  m_TagString: Image
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,7 +284,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -978,7 +978,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1616,6 +1616,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.82
       objectReference: {fileID: 0}
+    - target: {fileID: 4949995021334204866, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949995021334204866, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949995021334204866, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3207547
+      objectReference: {fileID: 0}
     - target: {fileID: 6253787232207864439, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.05
@@ -1624,6 +1636,34 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.65
       objectReference: {fileID: 0}
+    - target: {fileID: 7512644295319600123, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_text
+      value: PRESS THE TRASH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576662661627136219, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576662661627136219, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576662661627136219, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681753670370444004, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681753670370444004, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681753670370444004, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3207547
+      objectReference: {fileID: 0}
     - target: {fileID: 8598614355821113104, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_Name
       value: Minigame
@@ -1631,6 +1671,18 @@ PrefabInstance:
     - target: {fileID: 8598614355821113104, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207101312088317904, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207101312088317904, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207101312088317904, guid: 7d1b5e2791483b4489c508f609430ebc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3207547
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

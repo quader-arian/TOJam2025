@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using TMPro;
 using UnityEngine;
 
@@ -16,8 +13,6 @@ public class ScoreController : MonoBehaviour
     public TMP_Text tmpt;
     public int lastSeconds = 0;
     private bool adding = false;
-    public int malfunctions;
-
 
     // Start is called before the first frame update
     void Start()
@@ -59,13 +54,16 @@ public class ScoreController : MonoBehaviour
             adding = true;
         }
 
-        if (malfunctions > 0)
+        bool malfunctioning = false;
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Place"))
         {
-            ToggleAllPlaceHitboxes(false);
+            if (g.GetComponent<MalfunctionController>().isMalfunctioning)
+            {
+                malfunctioning = true;
+                break;
+            }
         }
-        else{
-            ToggleAllPlaceHitboxes(true);
-        }
+        ToggleAllPlaceHitboxes(!malfunctioning);
 
         tmpt.text = "Time: " + timerString + "\nScore: " + score + "\nStellar Marks: $" + money + "\nLife Support Tokens: ¥" + tokens + "\nRooms: " + rooms + "\nHealth: " + health;
     }

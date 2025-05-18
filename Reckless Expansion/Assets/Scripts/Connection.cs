@@ -1,9 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class Connection : MonoBehaviour
 {
@@ -52,8 +48,10 @@ public class Connection : MonoBehaviour
             {
                 potentialLinks.Add(this.gameObject);
                 GetComponent<Renderer>().material.color = successColor;
+                GetComponent<PipeSpriteController>().SwapSprite(true);
                 potentialLinks.Add(c);
                 c.GetComponent<Renderer>().material.color = successColor;
+                c.GetComponent<PipeSpriteController>().SwapSprite(true);
                 pipesConnected = true;
             }
             else
@@ -61,10 +59,12 @@ public class Connection : MonoBehaviour
                 if (!potentialLinks.Contains(this.gameObject))
                 {
                     GetComponent<Renderer>().material.color = originalColor;
+                    GetComponent<PipeSpriteController>().SwapSprite(false);
                 }
                 if (!potentialLinks.Contains(this.gameObject) && !c.GetComponent<Connection>().locked)
                 {
                     c.GetComponent<Renderer>().material.color = originalColor;
+                    c.GetComponent<PipeSpriteController>().SwapSprite(false);
                 }
             }
         }
@@ -91,6 +91,7 @@ public class Connection : MonoBehaviour
                 foreach (GameObject p in potentialLinks)
                 {
                     p.GetComponent<Connection>().locked = true;
+                    p.GetComponent<Renderer>().enabled = false;
                     CheckAttachedRooms(p);
                 }
                 transform.parent.GetComponent<MalfunctionController>().enabled = true;

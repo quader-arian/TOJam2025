@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
 
 public class DisplayRoomStats : MonoBehaviour
 {
@@ -16,12 +15,12 @@ public class DisplayRoomStats : MonoBehaviour
     }
     void OnMouseOver()
     {
-        if (!GetComponent<DragTransform>().dragging && GameObject.FindWithTag("Stats").GetComponent<ScoreController>().malfunctions <= 0)
+        if (!GetComponent<DragTransform>().dragging)
         {
             display.GetComponent<DisplayText>().display.SetActive(true);
             display.transform.position = transform.position + new Vector3(1, 1, 0);
             TMP_Text tmpText = display.GetComponent<DisplayText>().text.GetComponent<TMP_Text>();
-            tmpText.text = "NAME: " + room.title + "\r\nSCORE GAIN: " + room.popGain*0.5 + "/SEC\r\n$$$ GAIN: " + room.currencyGain*0.5 + "/SEC\r\nMALFUNC CHANCE: ";
+            tmpText.text = "NAME: " + room.title + "\r\nSCORE GAIN: " + room.popGain * 0.5 + "/SEC\r\n$$$ GAIN: " + room.currencyGain * 0.5 + "/SEC\r\nMALFUNC CHANCE: ";
 
             int connections = 0;
             string supportsString = "";
@@ -54,8 +53,8 @@ public class DisplayRoomStats : MonoBehaviour
             }
 
             float malfunctionTemp = GetComponent<MalfunctionController>().rates[connections] - GetComponent<MalfunctionController>().boost;
-            int malfunction = (int)(malfunctionTemp*100);
-            tmpText.text += malfunction + "%\r\nSUPPORTS CONNECTED: "+ supportsString;
+            int malfunction = (int)(malfunctionTemp * 100);
+            tmpText.text += malfunction + "%\r\nSUPPORTS CONNECTED: " + supportsString;
 
 
             string specialText = "";
@@ -71,7 +70,7 @@ public class DisplayRoomStats : MonoBehaviour
             {
                 specialText += "\r\nSPECIAL: Nutrients Support";
             }
-            if(room.additionalInfo != "")
+            if (room.additionalInfo != "")
             {
                 specialText += "\r\nSPECIAL: " + room.additionalInfo;
             }
