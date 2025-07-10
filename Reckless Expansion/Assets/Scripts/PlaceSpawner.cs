@@ -1,5 +1,6 @@
-using UnityEngine;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 public class PlaceSpawner : MonoBehaviour
 {
@@ -103,11 +104,32 @@ public class PlaceSpawner : MonoBehaviour
         builds[i].GetComponent<DragTransform>().enabled = false;
         builds[i].GetComponent<MalfunctionController>().enabled = false;
         builds[i].GetComponent<ClickBoost>().enabled = false;
+        int count = 0;
+        List<Transform> shuffleT = new List<Transform>();
         foreach (Transform child in builds[i].transform)
         {
             if (child.tag == "Up" || child.tag == "Down" || child.tag == "Left" || child.tag == "Right")
             {
                 child.GetComponent<Connection>().enabled = false;
+                shuffleT.Add(child);
+                count++;
+            }
+        }
+
+        //Shuffle and remove half the pipes
+        count = (int)(count*0.5f);
+        Transform [] shuffle = shuffleT.ToArray();
+        Reshuffle(shuffle);
+        foreach (Transform child in shuffle)
+        {
+            if (child.tag == "Up" || child.tag == "Down" || child.tag == "Left" || child.tag == "Right")
+            {
+                Destroy(child.gameObject);
+                count--;
+                if (count <= 0)
+                {
+                    break;
+                }
             }
         }
 
@@ -141,6 +163,17 @@ public class PlaceSpawner : MonoBehaviour
             }
             stats.money += (int)(stats.money * g.GetComponent<RoomStats>().boost);
             stats.health += (int)(stats.health * g.GetComponent<RoomStats>().boost);
+        }
+    }
+    void Reshuffle(Transform[] texts)
+    {
+        // Knuth shuffle algorithm :: courtesy of Wikipedia :)
+        for (int t = 0; t < texts.Length; t++)
+        {
+            Transform tmp = texts[t];
+            int r = Random.Range(t, texts.Length);
+            texts[t] = texts[r];
+            texts[r] = tmp;
         }
     }
 }
